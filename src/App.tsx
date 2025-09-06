@@ -1,10 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0)
+function PlaygroundApp() {
+  return (
+    <>
+      <h1>Hello, Vite + React + TypeScript!</h1>
+    </>
+  );
+}
+
+function MainApp() {
+  const [count, setCount] = useState(0);
 
   return (
     <>
@@ -29,7 +38,18 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </>
-  )
+  );
 }
 
-export default App
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={MainApp()} />
+        <Route path="/playground" element={PlaygroundApp()} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+export default App;
