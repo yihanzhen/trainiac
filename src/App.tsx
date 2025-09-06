@@ -3,11 +3,14 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+import Canvas from "../lib/view/canvas.tsx";
+import Graph from "../lib/view/graph.tsx";
 
 function PlaygroundApp() {
   return (
     <>
-      <h1>Hello, Vite + React + TypeScript!</h1>
+      <h1>hi</h1>
+      <Canvas />
     </>
   );
 }
