@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./App.css";
+import TrainiacAppBar from "../lib/view/AppBar.tsx";
 import Canvas from "../lib/view/canvas.tsx";
 
 function PlaygroundApp() {
@@ -14,6 +14,7 @@ function PlaygroundApp() {
 function MainApp() {
   return (
     <>
+      <TrainiacAppBar />
       <div>main</div>
     </>
   );
