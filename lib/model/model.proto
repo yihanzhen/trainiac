@@ -29,11 +29,11 @@ message TrackRailway {
     DOUBLE_TRACK = 4;
   }
 
-  // How the railway is connected.
+  // The direction of the railway.
   Direction direction = 2;
 }
 
-// How the tracks are arranged at a station.
+// Defines how tracks are arranged at a station.
 message TrackArrangement {
   message Node {
     oneof node {
@@ -54,27 +54,33 @@ message TrackArrangement {
   repeated Node nodes = 1;
 }
 
+// Defines a concourse. A concourse can have multiple tracks and
+// each track connnects to zero (in the case of a terminus track)
+// or one railway on both sides of the concourse.
 message Concourse {
-  LocalizedString name = 1;
+  // The name of the concourse.
+  string name = 1;
 
+  // The display name of the concourse.
+  LocalizedString display_name = 2;
+
+  // Defines a track at a railway concourse.
   message Track {
-    TrackLine incoming = 1;
+    TrackRailway incoming = 1;
 
-    TrackLine outgoing = 2;
+    TrackRailway outgoing = 2;
   }
 
-  repeated Track tracks = 3;
+  // Tracks of the concourse.
+  repeated Track tracks = 4;
 }
 
+// Defines a station with multiple concourses in parallel.
 message MultiConcourse {
-  message NamedConcourse {
-    LocalizedString name = 1;
-    Concourse concourse = 2;
-  }
-
-  repeated NamedConcourse named_concourses = 1;
+  repeated Concourse named_concourses = 1;
 }
 
+// Defines an interlocking station.
 message Interlocking {
   message Track {
     repeated TrackLine incomings = 2;
@@ -86,93 +92,133 @@ message Interlocking {
 }
 
 message Station {
-  LocalizedString name = 1;
+  // The name of the station.
+  string name = 1;
 
-  oneof track_arrangement {
-    Concourse default_concourse = 2;
+  // The display name of the station.
+  LocalizedString display_name = 2;
 
-    MultiConcourse concourses = 3;
+  // The name of the railway to define the direction of the concourse.
+  // The outbound direction of the referenced railway is the incoming
+  // direction of the station.
+  string direction_reference = 3;
 
-    Signal signal = 4;
-  }
+  TrackArrangement track_arrangement = 4;
 
   enum Service {
     SERVICE_UNSPECIFIED = 0;
 
+    // The station is not in service.
     CLOSED = 1;
 
+    // The station is used as a signal box only.
     SIGNAL = 2;
 
+    // The station serves cargo trains only.
     CARGO = 3;
 
+    // The station serves passenger trains only.
     PASSENGER = 4;
 
+    // The station serves both cargo and passenger trains.
     PASSENGER_CARGO = 5;
   }
 
+  // The service of this station.
   Service service = 5;
 }
 
+// The spec of a railway, or an interval of a railway.
 message RailwaySpec {
-  int32 design_speed = 2;
+  int32 design_speed = 1;
 
   enum Service {
     SERVICE_UNSPECIFIED = 0;
+
+    // This railway is passenger only.
     PASSENGER = 1;
-    PASSENGER_CARGO = 2;
-    CAGRO = 3;
+
+    // This railway is cargo only.
+    CAGRO = 2;
+
+    // This railway serves both passenger and cargo trains.
+    PASSENGER_CARGO = 3;
   }
 
-  Usage Usage = 3;
+  // The service of this railway.
+  Service service = 2;
 
   enum OperateState {
     OPERATE_STATE_UNSPECIFIED = 0;
+
+    // This railway is operating.
     OPERATING = 1;
+
+    // This railway is under construction.
     CONSTRUCTING = 2;
+
+    // THis railway is under design.
     DESIGNING = 3;
   }
 
-  OperateState operate_state = 4;
+  // The operating state of this railway.
+  OperateState operate_state = 3;
 
   enum Track {
     TRACK_UNSPECIFIED = 0;
+
+    // This railway is a single-track railway.
     SINGLE_TRACK = 1;
+
+    // This railway is a double-track railway.
     DOUBLE_TRACK = 2;
   }
 
-  Track track = 5;
+  // The track configuration of this railway.
+  Track track = 4;
 
   enum Hierachy {
     HIERACHY_UNSPECIFIED = 0;
+
+    // This railway is the main line.
     MAIN = 1;
+
+    // This railway is a branch line.
     BRANCH = 2;
+
+    // This railway is a connector.
     CONNECTOR = 3;
   }
 
-  Hierachy hierachy = 6;
-
-  enum Construction {
-    CONSTRUCTION_UNSPECIFIED = 0;
-
-    NEWLY_CONSTRUCTED = 1;
-
-    UPGRADED = 2;
-  }
-
-  Construction construction = 7;
+  // The hierachy of this railway.
+  Hierachy hierachy = 5;
 }
 
 message Interval {
+  // The interval reuses part of an existing railway.
   message ExistingInterval {
+    // The existing railway reused.
     string railway = 1;
 
+    // The start station of the reused part. This field and
+    // `end_station` must both be set or both be unset. If both
+    // of these two fields are unset, the entire railway is
+    // reused.
     string start_station = 2;
 
+    // The end station of the reused part. This field and
+    // `start_station` must both be set or both be unset. If both
+    // of these two fields are unset, the entire railway is
+    // reused.
     string end_station = 3;
+
+    // Upgrade work is done for this interval.
+    bool upgraded = 4;
   }
 
+  // The interval is newly constructed.
   message NewInterval {
-    RailwaySpec spec_override = 1;
+    // The list of stations in the outbound order.
     repeated string stations = 2;
   }
 
@@ -181,36 +227,65 @@ message Interval {
 
     NewInterval new_interval = 2;
   }
+
+  // The spec of this railway interval, if different from
+  // other parts of the railway.
+  RailwaySpec railway_spec_override = 3;
 }
 
+// The route of a railway.
 message Route {
   repeated Interval intervals = 1;
 }
 
+// Defines a railway.
 message Railway {
-  LocalizedString name = 1;
+  // The name of the railway.
+  string name = 1;
 
-  RailwaySpec railway_spec = 2;
+  // The display name of the railway.
+  LocalizedString display_name = 2;
 
-  enum RecordState {
+  // The spec of the railway.
+  RailwaySpec railway_spec = 3;
+
+  enum NameState {
     RECORD_STATE_UNSPECIFIED = 0;
+
+    // The name is still active.
     ACTIVE = 1;
+
+    // The name is deprecated.
     DEPRECATED = 2;
   }
 
-  RecordState record_state = 3;
+  // The name state of this railway.
+  NamingState name_state = 4;
 
-  Route route = 4;
+  // The route of the railway.
+  Route route = 5;
 }
 
+// Defines a railway line.
 message Line {
-  LocalizedString name = 1;
+  // The name of the line.
+  string name = 1;
 
-  Route route = 2;
+  // The display name of the line.
+  LocalizedString display_name = 2;
+
+  // The route of the line.
+  Route route = 3;
 }
 
+// Defines a corridor.
 message Corridor {
-  LocalizedString name = 1;
+  // The name of the corridor.
+  string name = 1;
 
+  // The display name of the corridor.
+  LocalizedString display_name = 2;
+
+  // The lines of the corridor.
   repeated Line lines = 2;
 }
