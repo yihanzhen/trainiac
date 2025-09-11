@@ -7,7 +7,6 @@ function PlaygroundApp() {
   return (
     <>
       <TrainiacAppBar appName="Trainiac playground" />
-      <Canvas />
     </>
   );
 }

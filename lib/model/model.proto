@@ -83,12 +83,17 @@ message MultiConcourse {
 // Defines an interlocking station.
 message Interlocking {
   message Track {
-    repeated TrackLine incomings = 2;
+    repeated TrackRailway incomings = 2;
 
-    repeated TrackLine outgoings = 3;
+    repeated TrackRailway outgoings = 3;
   }
 
   repeated Track tracks = 4;
+}
+
+// Defines a terminus station.
+message Terminus {
+  repeated TrackRailway incomings = 1;
 }
 
 message Station {
@@ -260,7 +265,7 @@ message Railway {
   }
 
   // The name state of this railway.
-  NamingState name_state = 4;
+  NameState name_state = 4;
 
   // The route of the railway.
   Route route = 5;
@@ -287,5 +292,5 @@ message Corridor {
   LocalizedString display_name = 2;
 
   // The lines of the corridor.
-  repeated Line lines = 2;
+  repeated Line lines = 3;
 }

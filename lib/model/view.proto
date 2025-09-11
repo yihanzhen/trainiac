@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package trainiac.model;
+
+message View {
+  // Settings for the canvas.
+  Canvas canvas = 1;
+
+  // Settings for the tracks.
+  Track track = 2;
+}
+
+message Track {
+  // The radius of a track in a concourse measured by the
+  // number of units. The default value is 1.
+  float track_radius = 2;
+
+  // The stroke width of a track.
+  float track_stroke_width = 3;
+}
+
+message Canvas {
+  // The length in the number of pixels of a grid unit.
+  // The default value is 20.
+  int32 unit_length = 1;
+
+  // Width of the canvas.
+  int32 width = 2;
+
+  // Height of the canvas.
+  int32 height = 3;
+}
