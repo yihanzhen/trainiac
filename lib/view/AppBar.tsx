@@ -31,7 +31,7 @@ export class TrainiacAppBar extends React.Component<
 
   render() {
     const toggleDrawer = (newOpen: boolean) => () => {
-      this.state = { open: newOpen };
+      this.setState({ open: newOpen });
     };
 
     const DrawerList = (
