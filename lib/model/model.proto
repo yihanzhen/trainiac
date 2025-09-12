@@ -12,6 +12,17 @@ message LocalizedString {
   string default_value = 2;
 }
 
+// The data model of a transit diagram.
+message Model {
+  repeated Station stations = 1;
+
+  repeated Railway railways = 2;
+
+  repeated Line lines = 3;
+
+  repeated Corridor corridors = 4;
+}
+
 // The Railway that connects to a track at a station.
 message TrackRailway {
   // The name of the railway that connects to the track.

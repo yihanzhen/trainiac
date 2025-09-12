@@ -1,25 +1,16 @@
 syntax = "proto3";
 
-package trainiac.model;
+package trainiac.view;
 
-message View {
+message Settings {
   // Settings for the canvas.
-  Canvas canvas = 1;
+  CanvasSettings canvas_settings = 1;
 
   // Settings for the tracks.
-  Track track = 2;
+  TrackSettings track_settings = 2;
 }
 
-message Track {
-  // The radius of a track in a concourse measured by the
-  // number of units. The default value is 1.
-  float track_radius = 2;
-
-  // The stroke width of a track.
-  float track_stroke_width = 3;
-}
-
-message Canvas {
+message CanvasSettings {
   // The length in the number of pixels of a grid unit.
   // The default value is 20.
   int32 unit_length = 1;
@@ -29,4 +20,30 @@ message Canvas {
 
   // Height of the canvas.
   int32 height = 3;
+}
+
+message TrackSettings {
+  // The radius of a track in a concourse measured by the
+  // number of units. The default value is 0.5.
+  float track_radius = 2;
+
+  // The stroke width of a track. The default value is 0.15.
+  float track_stroke_width = 3;
+}
+
+// Configuration of a transit diagram.
+message View {
+  Settings settings = 1;
+  repeated Station stations = 2;
+}
+
+// Configuration of a station.
+message Station {
+  string name = 1;
+
+  float x = 2;
+
+  float y = 3;
+
+  string color = 4;
 }

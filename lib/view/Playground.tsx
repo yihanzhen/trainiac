@@ -1,19 +1,36 @@
 import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import Typography from "@mui/material/Typography";
 import * as React from "react";
 
-type PlaygroundTileProps = {
+type PlaygroundCardProps = {
   name: string;
+  children: React.ReactNode;
 };
 
-export class PlaygroundTile extends React.Component<PlaygroundTileProps, {}> {
-  constructor(props: PlaygroundTileProps) {
+export class PlaygroundCard extends React.Component<PlaygroundCardProps, {}> {
+  constructor(props: PlaygroundCardProps) {
     super(props);
   }
 
   render(): React.ReactNode {
     return (
       <>
-        <Box sx={{ width: 250 }} role="presentation"></Box>
+        <Card variant="outlined" sx={{ width: 345 }}>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center", // Centers horizontally
+              width: 345,
+              height: 200,
+            }}
+          >
+            {this.props.children}
+          </Box>
+          <Typography variant="h5" component="div" align="center">
+            {this.props.name}
+          </Typography>
+        </Card>
       </>
     );
   }
