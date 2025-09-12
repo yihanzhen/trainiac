@@ -1,13 +1,50 @@
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
+import playgroundErrStationModel from "../impl/playground/errstation/model.json?raw";
+import playgroundErrStationView from "../impl/playground/errstation/view.json?raw";
+import playgroundSingleStationModel from "../impl/playground/station/model.json?raw";
+import playgroundSingleStationView from "../impl/playground/station/view.json?raw";
+import playgroundTwoStationsModel from "../impl/playground/twostations/model.json?raw";
+import playgroundTwoStationsView from "../impl/playground/twostations/view.json?raw";
 import { TrainiacAppBar } from "../lib/view/AppBar.tsx";
-import Canvas from "../lib/view/canvas.tsx";
+import { Graph } from "../lib/view/Graph.tsx";
+import { GraphError } from "../lib/view/GraphError.tsx";
+import { PlaygroundCard } from "../lib/view/Playground.tsx";
 
 function PlaygroundApp() {
   return (
     <>
       <TrainiacAppBar appName="Trainiac playground" />
-      <Canvas />
+      <Box sx={{ p: 6 }}>
+        <Grid container spacing={6}>
+          <PlaygroundCard name="single station">
+            <GraphError>
+              <Graph
+                model={playgroundSingleStationModel}
+                view={playgroundSingleStationView}
+              ></Graph>
+            </GraphError>
+          </PlaygroundCard>
+          <PlaygroundCard name="two station">
+            <GraphError>
+              <Graph
+                model={playgroundTwoStationsModel}
+                view={playgroundTwoStationsView}
+              ></Graph>
+            </GraphError>
+          </PlaygroundCard>
+          <PlaygroundCard name="err station">
+            <GraphError>
+              <Graph
+                model={playgroundErrStationModel}
+                view={playgroundErrStationView}
+              ></Graph>
+            </GraphError>
+          </PlaygroundCard>
+        </Grid>
+      </Box>
     </>
   );
 }

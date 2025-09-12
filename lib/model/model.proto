@@ -12,6 +12,17 @@ message LocalizedString {
   string default_value = 2;
 }
 
+// The data model of a transit diagram.
+message Model {
+  repeated Station stations = 1;
+
+  repeated Railway railways = 2;
+
+  repeated Line lines = 3;
+
+  repeated Corridor corridors = 4;
+}
+
 // The Railway that connects to a track at a station.
 message TrackRailway {
   // The name of the railway that connects to the track.
@@ -83,12 +94,17 @@ message MultiConcourse {
 // Defines an interlocking station.
 message Interlocking {
   message Track {
-    repeated TrackLine incomings = 2;
+    repeated TrackRailway incomings = 2;
 
-    repeated TrackLine outgoings = 3;
+    repeated TrackRailway outgoings = 3;
   }
 
   repeated Track tracks = 4;
+}
+
+// Defines a terminus station.
+message Terminus {
+  repeated TrackRailway incomings = 1;
 }
 
 message Station {
@@ -260,7 +276,7 @@ message Railway {
   }
 
   // The name state of this railway.
-  NamingState name_state = 4;
+  NameState name_state = 4;
 
   // The route of the railway.
   Route route = 5;
@@ -287,5 +303,5 @@ message Corridor {
   LocalizedString display_name = 2;
 
   // The lines of the corridor.
-  repeated Line lines = 2;
+  repeated Line lines = 3;
 }
