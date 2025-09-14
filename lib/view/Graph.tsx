@@ -1,6 +1,7 @@
 import { Component } from "react";
 
 import { Config } from "../config/Config.ts";
+import { Grid } from "./Grid.tsx";
 import { Station } from "./Station.tsx";
 
 interface GraphProps {
@@ -29,6 +30,9 @@ export class Graph extends Component<GraphProps, {}> {
             this.config.view.settings!.canvasSettings!.unitLength
           }
         >
+          <Grid
+            canvasSettings={this.config.view.settings!.canvasSettings!}
+          ></Grid>
           {Array.from(this.config.stations.entries()).map(
             ([n, [, view]], _i) => {
               return (

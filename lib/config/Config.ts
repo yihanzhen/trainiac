@@ -8,6 +8,9 @@ const defaultView = create(viewpb.ViewSchema, {
   settings: {
     canvasSettings: {
       unitLength: 20,
+      gridXOffset: 0.5,
+      gridYOffset: 0.5,
+      gridClassName: "default-grid",
     },
     trackSettings: {
       trackRadius: 0.5,

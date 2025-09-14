@@ -12,7 +12,8 @@ message Settings {
 
 message CanvasSettings {
   // The length in the number of pixels of a grid unit.
-  // The default value is 20.
+  // The default value is 20. All scalar values below
+  // are specified in grid units.
   int32 unit_length = 1;
 
   // Width of the canvas.
@@ -20,6 +21,26 @@ message CanvasSettings {
 
   // Height of the canvas.
   int32 height = 3;
+
+  // Origin x offset.
+  float x_offset = 4;
+
+  // Origin y offset.
+  float y_offset = 5;
+
+  // If true, do not show grids.
+  bool disable_grid = 6;
+
+  // Grid X offset, must be bewteen 0 and 1. The default
+  // value is 0.5.
+  float grid_x_offset = 7;
+
+  // Grid Y offset, must be between 0 and 1. The default
+  // value is 0.5.
+  float grid_y_offset = 8;
+
+  // The class name of the grid component for CSS purposes.
+  string grid_class_name = 9;
 }
 
 message TrackSettings {

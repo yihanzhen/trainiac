@@ -3,7 +3,8 @@
     "canvas_settings": {
       "unit_length": 40,
       "width": 5,
-      "height": 5
+      "height": 5,
+      "grid_class_name": "default-grid"
     },
     "track_settings": {
       "track_radius": 0.5,
