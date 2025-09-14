@@ -10,7 +10,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file view.proto.
  */
 export const file_view: GenFile = /*@__PURE__*/
-  fileDesc("Cgp2aWV3LnByb3RvEg10cmFpbmlhYy52aWV3IngKCFNldHRpbmdzEjYKD2NhbnZhc19zZXR0aW5ncxgBIAEoCzIdLnRyYWluaWFjLnZpZXcuQ2FudmFzU2V0dGluZ3MSNAoOdHJhY2tfc2V0dGluZ3MYAiABKAsyHC50cmFpbmlhYy52aWV3LlRyYWNrU2V0dGluZ3MiRAoOQ2FudmFzU2V0dGluZ3MSEwoLdW5pdF9sZW5ndGgYASABKAUSDQoFd2lkdGgYAiABKAUSDgoGaGVpZ2h0GAMgASgFIkEKDVRyYWNrU2V0dGluZ3MSFAoMdHJhY2tfcmFkaXVzGAIgASgCEhoKEnRyYWNrX3N0cm9rZV93aWR0aBgDIAEoAiJbCgRWaWV3EikKCHNldHRpbmdzGAEgASgLMhcudHJhaW5pYWMudmlldy5TZXR0aW5ncxIoCghzdGF0aW9ucxgCIAMoCzIWLnRyYWluaWFjLnZpZXcuU3RhdGlvbiI8CgdTdGF0aW9uEgwKBG5hbWUYASABKAkSCQoBeBgCIAEoAhIJCgF5GAMgASgCEg0KBWNvbG9yGAQgASgJYgZwcm90bzM");
+  fileDesc("Cgp2aWV3LnByb3RvEg10cmFpbmlhYy52aWV3IngKCFNldHRpbmdzEjYKD2NhbnZhc19zZXR0aW5ncxgBIAEoCzIdLnRyYWluaWFjLnZpZXcuQ2FudmFzU2V0dGluZ3MSNAoOdHJhY2tfc2V0dGluZ3MYAiABKAsyHC50cmFpbmlhYy52aWV3LlRyYWNrU2V0dGluZ3MixQEKDkNhbnZhc1NldHRpbmdzEhMKC3VuaXRfbGVuZ3RoGAEgASgFEg0KBXdpZHRoGAIgASgFEg4KBmhlaWdodBgDIAEoBRIQCgh4X29mZnNldBgEIAEoAhIQCgh5X29mZnNldBgFIAEoAhIUCgxkaXNhYmxlX2dyaWQYBiABKAgSFQoNZ3JpZF94X29mZnNldBgHIAEoAhIVCg1ncmlkX3lfb2Zmc2V0GAggASgCEhcKD2dyaWRfY2xhc3NfbmFtZRgJIAEoCSJBCg1UcmFja1NldHRpbmdzEhQKDHRyYWNrX3JhZGl1cxgCIAEoAhIaChJ0cmFja19zdHJva2Vfd2lkdGgYAyABKAIiWwoEVmlldxIpCghzZXR0aW5ncxgBIAEoCzIXLnRyYWluaWFjLnZpZXcuU2V0dGluZ3MSKAoIc3RhdGlvbnMYAiADKAsyFi50cmFpbmlhYy52aWV3LlN0YXRpb24iPAoHU3RhdGlvbhIMCgRuYW1lGAEgASgJEgkKAXgYAiABKAISCQoBeRgDIAEoAhINCgVjb2xvchgEIAEoCWIGcHJvdG8z");
 
 /**
  * @generated from message trainiac.view.Settings
@@ -44,7 +44,8 @@ export const SettingsSchema: GenMessage<Settings> = /*@__PURE__*/
 export type CanvasSettings = Message<"trainiac.view.CanvasSettings"> & {
   /**
    * The length in the number of pixels of a grid unit.
-   * The default value is 20.
+   * The default value is 20. All scalar values below
+   * are specified in grid units.
    *
    * @generated from field: int32 unit_length = 1;
    */
@@ -63,6 +64,48 @@ export type CanvasSettings = Message<"trainiac.view.CanvasSettings"> & {
    * @generated from field: int32 height = 3;
    */
   height: number;
+
+  /**
+   * Origin x offset.
+   *
+   * @generated from field: float x_offset = 4;
+   */
+  xOffset: number;
+
+  /**
+   * Origin y offset.
+   *
+   * @generated from field: float y_offset = 5;
+   */
+  yOffset: number;
+
+  /**
+   * If true, do not show grids.
+   *
+   * @generated from field: bool disable_grid = 6;
+   */
+  disableGrid: boolean;
+
+  /**
+   * Grid X offset, must be bewteen 0 and 1.
+   *
+   * @generated from field: float grid_x_offset = 7;
+   */
+  gridXOffset: number;
+
+  /**
+   * Grid Y offset, must be between 0 and 1.
+   *
+   * @generated from field: float grid_y_offset = 8;
+   */
+  gridYOffset: number;
+
+  /**
+   * The class name of the grid component for CSS purposes.
+   *
+   * @generated from field: string grid_class_name = 9;
+   */
+  gridClassName: string;
 };
 
 /**
@@ -78,14 +121,14 @@ export const CanvasSettingsSchema: GenMessage<CanvasSettings> = /*@__PURE__*/
 export type TrackSettings = Message<"trainiac.view.TrackSettings"> & {
   /**
    * The radius of a track in a concourse measured by the
-   * number of units. The default value is 1.
+   * number of units. The default value is 0.5.
    *
    * @generated from field: float track_radius = 2;
    */
   trackRadius: number;
 
   /**
-   * The stroke width of a track.
+   * The stroke width of a track. The default value is 0.15.
    *
    * @generated from field: float track_stroke_width = 3;
    */

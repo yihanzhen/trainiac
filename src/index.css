@@ -1,0 +1,4 @@
+.default-grid {
+  stroke: grey;
+  stroke-dasharray: 1 4;
+}

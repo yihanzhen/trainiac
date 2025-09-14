@@ -9,13 +9,13 @@
     {
       "name": "First Station",
       "x": 3.5,
-      "y": 5,
+      "y": 3.5,
       "color": "blue"
     },
     {
       "name": "Second Station",
       "x": 7.5,
-      "y": 5,
+      "y": 3.5,
       "color": "red"
     }
   ]
