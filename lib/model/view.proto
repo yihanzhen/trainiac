@@ -40,6 +40,7 @@ message CanvasSettings {
   float grid_y_offset = 8;
 
   // The class name of the grid component for CSS purposes.
+  // The default value is "default-grid".
   string grid_class_name = 9;
 }
 
