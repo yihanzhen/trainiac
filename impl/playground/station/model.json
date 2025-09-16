@@ -1,3 +1,22 @@
 {
-  "stations": [{ "name": "My Station" }]
+  "stations": [
+    {
+      "name": "My Station",
+      "trackArrangement": {
+        "nodes": [
+          {
+            "concourse": {
+              "name": "Default Concourse",
+              "tracks": [
+                {
+                  "incoming": {},
+                  "outgoing": {}
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
 }

@@ -6,8 +6,8 @@ message Settings {
   // Settings for the canvas.
   CanvasSettings canvas_settings = 1;
 
-  // Settings for the tracks.
-  TrackSettings track_settings = 2;
+  // Settings for the stations.
+  StationSettings station_settings = 2;
 }
 
 message CanvasSettings {
@@ -44,13 +44,16 @@ message CanvasSettings {
   string grid_class_name = 9;
 }
 
-message TrackSettings {
+message StationSettings {
   // The radius of a track in a concourse measured by the
   // number of units. The default value is 0.5.
   float track_radius = 2;
 
   // The stroke width of a track. The default value is 0.15.
+  // TODO: deprecate. Using CSS instead.
   float track_stroke_width = 3;
+
+  float concourse_track_connector_length = 4;
 }
 
 // Configuration of a transit diagram.
@@ -61,11 +64,48 @@ message View {
 
 // Configuration of a station.
 message Station {
+  // Name of the station.
   string name = 1;
 
-  float x = 2;
+  // The class name of the grid component for CSS purposes.
+  // The default value is "default-station".
+  string class_name = 2;
 
-  float y = 3;
+  enum Direction {
+    DIRECTION_UNSPECIFIED = 0;
+    SOUTHEAST = 1;
+    SOUTH = 2;
+    SOUTHWEST = 3;
+    WEST = 4;
+    NORTHWEST = 5;
+    NORTH = 6;
+    NORTHEAST = 7;
+    EAST = 8;
+  }
 
-  string color = 4;
+  message Node {
+    // X coordinate of the reference track in the node.
+    float x = 1;
+
+    // Y coordinate of the reference track in the node.
+    float y = 2;
+
+    // The direction of the node. This value only matters
+    // if the node has multiple tracks. The direction is
+    // defined such that the tracks are aligned perpendicular to the
+    // direction, and the first track in the node (in the case
+    // of a multi-concourse node, the first track of the first
+    // concourse), is the farthest to the left when looking
+    // towards the node's direction.
+    //
+    // Note this may become a problem when different concourse
+    // of a node have different directions; we will deal with
+    // that later.
+    Direction direction = 3;
+
+    // The index of the track where x and y are coordinates for.
+    // Default value is zero.
+    int32 reference_track = 4;
+  }
+  repeated Node nodes = 3;
 }

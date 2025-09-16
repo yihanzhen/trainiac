@@ -51,3 +51,15 @@ export function transformY(
   let yAbs = y * fromSys.unitLength + fromSys.yOffset;
   return (yAbs - toSys.yOffset) / toSys.unitLength;
 }
+
+export function tsx(x: number, cs: CoordinateSystem) {
+  return transformX(x, cs, screen);
+}
+
+export function tsy(y: number, cs: CoordinateSystem) {
+  return transformY(y, cs, screen);
+}
+
+export function tss(s: number, cs: CoordinateSystem) {
+  return cs.unitLength * s;
+}

@@ -2,3 +2,8 @@
   stroke: grey;
   stroke-dasharray: 1 4;
 }
+
+.default-station {
+  stroke: black;
+  fill: none;
+}

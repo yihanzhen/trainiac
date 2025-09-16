@@ -8,15 +8,11 @@
   "stations": [
     {
       "name": "First Station",
-      "x": 3.5,
-      "y": 3.5,
-      "color": "blue"
+      "nodes": [{ "x": 2.5, "y": 2.5 }]
     },
     {
       "name": "Second Station",
-      "x": 7.5,
-      "y": 3.5,
-      "color": "red"
+      "nodes": [{ "x": 7.5, "y": 7.5 }]
     }
   ]
 }

@@ -2,15 +2,15 @@
 // @generated from file view.proto (package trainiac.view, syntax proto3)
 /* eslint-disable */
 
-import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
-import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
+import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv2";
+import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv2";
 import type { Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file view.proto.
  */
 export const file_view: GenFile = /*@__PURE__*/
-  fileDesc("Cgp2aWV3LnByb3RvEg10cmFpbmlhYy52aWV3IngKCFNldHRpbmdzEjYKD2NhbnZhc19zZXR0aW5ncxgBIAEoCzIdLnRyYWluaWFjLnZpZXcuQ2FudmFzU2V0dGluZ3MSNAoOdHJhY2tfc2V0dGluZ3MYAiABKAsyHC50cmFpbmlhYy52aWV3LlRyYWNrU2V0dGluZ3MixQEKDkNhbnZhc1NldHRpbmdzEhMKC3VuaXRfbGVuZ3RoGAEgASgFEg0KBXdpZHRoGAIgASgFEg4KBmhlaWdodBgDIAEoBRIQCgh4X29mZnNldBgEIAEoAhIQCgh5X29mZnNldBgFIAEoAhIUCgxkaXNhYmxlX2dyaWQYBiABKAgSFQoNZ3JpZF94X29mZnNldBgHIAEoAhIVCg1ncmlkX3lfb2Zmc2V0GAggASgCEhcKD2dyaWRfY2xhc3NfbmFtZRgJIAEoCSJBCg1UcmFja1NldHRpbmdzEhQKDHRyYWNrX3JhZGl1cxgCIAEoAhIaChJ0cmFja19zdHJva2Vfd2lkdGgYAyABKAIiWwoEVmlldxIpCghzZXR0aW5ncxgBIAEoCzIXLnRyYWluaWFjLnZpZXcuU2V0dGluZ3MSKAoIc3RhdGlvbnMYAiADKAsyFi50cmFpbmlhYy52aWV3LlN0YXRpb24iPAoHU3RhdGlvbhIMCgRuYW1lGAEgASgJEgkKAXgYAiABKAISCQoBeRgDIAEoAhINCgVjb2xvchgEIAEoCWIGcHJvdG8z");
+  fileDesc("Cgp2aWV3LnByb3RvEg10cmFpbmlhYy52aWV3InwKCFNldHRpbmdzEjYKD2NhbnZhc19zZXR0aW5ncxgBIAEoCzIdLnRyYWluaWFjLnZpZXcuQ2FudmFzU2V0dGluZ3MSOAoQc3RhdGlvbl9zZXR0aW5ncxgCIAEoCzIeLnRyYWluaWFjLnZpZXcuU3RhdGlvblNldHRpbmdzIsUBCg5DYW52YXNTZXR0aW5ncxITCgt1bml0X2xlbmd0aBgBIAEoBRINCgV3aWR0aBgCIAEoBRIOCgZoZWlnaHQYAyABKAUSEAoIeF9vZmZzZXQYBCABKAISEAoIeV9vZmZzZXQYBSABKAISFAoMZGlzYWJsZV9ncmlkGAYgASgIEhUKDWdyaWRfeF9vZmZzZXQYByABKAISFQoNZ3JpZF95X29mZnNldBgIIAEoAhIXCg9ncmlkX2NsYXNzX25hbWUYCSABKAkibQoPU3RhdGlvblNldHRpbmdzEhQKDHRyYWNrX3JhZGl1cxgCIAEoAhIaChJ0cmFja19zdHJva2Vfd2lkdGgYAyABKAISKAogY29uY291cnNlX3RyYWNrX2Nvbm5lY3Rvcl9sZW5ndGgYBCABKAIiWwoEVmlldxIpCghzZXR0aW5ncxgBIAEoCzIXLnRyYWluaWFjLnZpZXcuU2V0dGluZ3MSKAoIc3RhdGlvbnMYAiADKAsyFi50cmFpbmlhYy52aWV3LlN0YXRpb24i0gIKB1N0YXRpb24SDAoEbmFtZRgBIAEoCRISCgpjbGFzc19uYW1lGAIgASgJEioKBW5vZGVzGAMgAygLMhsudHJhaW5pYWMudmlldy5TdGF0aW9uLk5vZGUaagoETm9kZRIJCgF4GAEgASgCEgkKAXkYAiABKAISMwoJZGlyZWN0aW9uGAMgASgOMiAudHJhaW5pYWMudmlldy5TdGF0aW9uLkRpcmVjdGlvbhIXCg9yZWZlcmVuY2VfdHJhY2sYBCABKAUijAEKCURpcmVjdGlvbhIZChVESVJFQ1RJT05fVU5TUEVDSUZJRUQQABINCglTT1VUSEVBU1QQARIJCgVTT1VUSBACEg0KCVNPVVRIV0VTVBADEggKBFdFU1QQBBINCglOT1JUSFdFU1QQBRIJCgVOT1JUSBAGEg0KCU5PUlRIRUFTVBAHEggKBEVBU1QQCGIGcHJvdG8z");
 
 /**
  * @generated from message trainiac.view.Settings
@@ -24,11 +24,11 @@ export type Settings = Message<"trainiac.view.Settings"> & {
   canvasSettings?: CanvasSettings;
 
   /**
-   * Settings for the tracks.
+   * Settings for the stations.
    *
-   * @generated from field: trainiac.view.TrackSettings track_settings = 2;
+   * @generated from field: trainiac.view.StationSettings station_settings = 2;
    */
-  trackSettings?: TrackSettings;
+  stationSettings?: StationSettings;
 };
 
 /**
@@ -87,14 +87,16 @@ export type CanvasSettings = Message<"trainiac.view.CanvasSettings"> & {
   disableGrid: boolean;
 
   /**
-   * Grid X offset, must be bewteen 0 and 1.
+   * Grid X offset, must be bewteen 0 and 1. The default
+   * value is 0.5.
    *
    * @generated from field: float grid_x_offset = 7;
    */
   gridXOffset: number;
 
   /**
-   * Grid Y offset, must be between 0 and 1.
+   * Grid Y offset, must be between 0 and 1. The default
+   * value is 0.5.
    *
    * @generated from field: float grid_y_offset = 8;
    */
@@ -102,6 +104,7 @@ export type CanvasSettings = Message<"trainiac.view.CanvasSettings"> & {
 
   /**
    * The class name of the grid component for CSS purposes.
+   * The default value is "default-grid".
    *
    * @generated from field: string grid_class_name = 9;
    */
@@ -116,9 +119,9 @@ export const CanvasSettingsSchema: GenMessage<CanvasSettings> = /*@__PURE__*/
   messageDesc(file_view, 1);
 
 /**
- * @generated from message trainiac.view.TrackSettings
+ * @generated from message trainiac.view.StationSettings
  */
-export type TrackSettings = Message<"trainiac.view.TrackSettings"> & {
+export type StationSettings = Message<"trainiac.view.StationSettings"> & {
   /**
    * The radius of a track in a concourse measured by the
    * number of units. The default value is 0.5.
@@ -129,17 +132,23 @@ export type TrackSettings = Message<"trainiac.view.TrackSettings"> & {
 
   /**
    * The stroke width of a track. The default value is 0.15.
+   * TODO: deprecate. Using CSS instead.
    *
    * @generated from field: float track_stroke_width = 3;
    */
   trackStrokeWidth: number;
+
+  /**
+   * @generated from field: float concourse_track_connector_length = 4;
+   */
+  concourseTrackConnectorLength: number;
 };
 
 /**
- * Describes the message trainiac.view.TrackSettings.
- * Use `create(TrackSettingsSchema)` to create a new message.
+ * Describes the message trainiac.view.StationSettings.
+ * Use `create(StationSettingsSchema)` to create a new message.
  */
-export const TrackSettingsSchema: GenMessage<TrackSettings> = /*@__PURE__*/
+export const StationSettingsSchema: GenMessage<StationSettings> = /*@__PURE__*/
   messageDesc(file_view, 2);
 
 /**
@@ -173,24 +182,24 @@ export const ViewSchema: GenMessage<View> = /*@__PURE__*/
  */
 export type Station = Message<"trainiac.view.Station"> & {
   /**
+   * Name of the station.
+   *
    * @generated from field: string name = 1;
    */
   name: string;
 
   /**
-   * @generated from field: float x = 2;
+   * The class name of the grid component for CSS purposes.
+   * The default value is "default-station".
+   *
+   * @generated from field: string class_name = 2;
    */
-  x: number;
+  className: string;
 
   /**
-   * @generated from field: float y = 3;
+   * @generated from field: repeated trainiac.view.Station.Node nodes = 3;
    */
-  y: number;
-
-  /**
-   * @generated from field: string color = 4;
-   */
-  color: string;
+  nodes: Station_Node[];
 };
 
 /**
@@ -199,4 +208,111 @@ export type Station = Message<"trainiac.view.Station"> & {
  */
 export const StationSchema: GenMessage<Station> = /*@__PURE__*/
   messageDesc(file_view, 4);
+
+/**
+ * @generated from message trainiac.view.Station.Node
+ */
+export type Station_Node = Message<"trainiac.view.Station.Node"> & {
+  /**
+   * X coordinate of the reference track in the node.
+   *
+   * @generated from field: float x = 1;
+   */
+  x: number;
+
+  /**
+   * Y coordinate of the reference track in the node.
+   *
+   * @generated from field: float y = 2;
+   */
+  y: number;
+
+  /**
+   * The direction of the node. This value only matters
+   * if the node has multiple tracks. The direction is
+   * defined such that the tracks are aligned perpendicular to the
+   * direction, and the first track in the node (in the case
+   * of a multi-concourse node, the first track of the first
+   * concourse), is the farthest to the left when looking
+   * towards the node's direction.
+   *
+   * Note this may become a problem when different concourse
+   * of a node have different directions; we will deal with
+   * that later.
+   *
+   * @generated from field: trainiac.view.Station.Direction direction = 3;
+   */
+  direction: Station_Direction;
+
+  /**
+   * The index of the track where x and y are coordinates for.
+   * Default value is zero.
+   *
+   * @generated from field: int32 reference_track = 4;
+   */
+  referenceTrack: number;
+};
+
+/**
+ * Describes the message trainiac.view.Station.Node.
+ * Use `create(Station_NodeSchema)` to create a new message.
+ */
+export const Station_NodeSchema: GenMessage<Station_Node> = /*@__PURE__*/
+  messageDesc(file_view, 4, 0);
+
+/**
+ * @generated from enum trainiac.view.Station.Direction
+ */
+export enum Station_Direction {
+  /**
+   * @generated from enum value: DIRECTION_UNSPECIFIED = 0;
+   */
+  DIRECTION_UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: SOUTHEAST = 1;
+   */
+  SOUTHEAST = 1,
+
+  /**
+   * @generated from enum value: SOUTH = 2;
+   */
+  SOUTH = 2,
+
+  /**
+   * @generated from enum value: SOUTHWEST = 3;
+   */
+  SOUTHWEST = 3,
+
+  /**
+   * @generated from enum value: WEST = 4;
+   */
+  WEST = 4,
+
+  /**
+   * @generated from enum value: NORTHWEST = 5;
+   */
+  NORTHWEST = 5,
+
+  /**
+   * @generated from enum value: NORTH = 6;
+   */
+  NORTH = 6,
+
+  /**
+   * @generated from enum value: NORTHEAST = 7;
+   */
+  NORTHEAST = 7,
+
+  /**
+   * @generated from enum value: EAST = 8;
+   */
+  EAST = 8,
+}
+
+/**
+ * Describes the enum trainiac.view.Station.Direction.
+ */
+export const Station_DirectionSchema: GenEnum<Station_Direction> = /*@__PURE__*/
+  enumDesc(file_view, 4, 0);
 

@@ -18,6 +18,8 @@ export class Graph extends Component<GraphProps, {}> {
   }
 
   render() {
+    let cs = this.config.view.settings!.canvasSettings!;
+    let u = cs.unitLength;
     return (
       <>
         <svg
@@ -34,13 +36,19 @@ export class Graph extends Component<GraphProps, {}> {
             canvasSettings={this.config.view.settings!.canvasSettings!}
           ></Grid>
           {Array.from(this.config.stations.entries()).map(
-            ([n, [, view]], _i) => {
+            ([n, [model, view]], _i) => {
               return (
                 <Station
                   name={n}
                   key={n}
                   view={view}
+                  model={model}
                   viewSettings={this.config.view.settings!}
+                  ics={{
+                    xOffset: cs.xOffset * u,
+                    yOffset: cs.yOffset * u,
+                    unitLength: u,
+                  }}
                 ></Station>
               );
             },

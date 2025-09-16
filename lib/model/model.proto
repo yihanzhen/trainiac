@@ -88,7 +88,7 @@ message Concourse {
 
 // Defines a station with multiple concourses in parallel.
 message MultiConcourse {
-  repeated Concourse named_concourses = 1;
+  repeated Concourse concourses = 1;
 }
 
 // Defines an interlocking station.

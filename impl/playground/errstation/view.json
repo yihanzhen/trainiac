@@ -3,9 +3,10 @@
     "canvas_settings": {
       "unit_length": 40,
       "width": 5,
-      "height": 5
+      "height": 5,
+      "grid_class_name": "default-grid"
     },
-    "track_settings": {
+    "station_settings": {
       "track_radius": 0.5,
       "track_stroke_width": 0.15
     }
@@ -13,8 +14,7 @@
   "stations": [
     {
       "name": "Your Station",
-      "x": 2.5,
-      "y": 2.5
+      "nodes": [{ "x": 2.5, "y": 2.5 }]
     }
   ]
 }
