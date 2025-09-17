@@ -1,3 +1,40 @@
 {
-  "stations": [{ "name": "First Station" }, { "name": "Second Station" }]
+  "stations": [
+    {
+      "name": "First Station",
+      "trackArrangement": {
+        "nodes": [
+          {
+            "concourse": {
+              "name": "Default Concourse",
+              "tracks": [
+                {
+                  "incoming": {},
+                  "outgoing": {}
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Second Station",
+      "trackArrangement": {
+        "nodes": [
+          {
+            "concourse": {
+              "name": "Default Concourse",
+              "tracks": [
+                {
+                  "incoming": {},
+                  "outgoing": {}
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
 }

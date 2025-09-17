@@ -1,0 +1,47 @@
+{
+  "stations": [
+    {
+      "name": "My Station",
+      "trackArrangement": {
+        "nodes": [
+          {
+            "multiConcourse": {
+              "concourses": [
+                {
+                  "name": "Default Concourse",
+                  "tracks": [
+                    {
+                      "incoming": {},
+                      "outgoing": {}
+                    },
+                    {
+                      "incoming": {},
+                      "outgoing": {}
+                    }
+                  ]
+                },
+                {
+                  "name": "Default Concourse",
+                  "tracks": [
+                    {
+                      "incoming": {},
+                      "outgoing": {}
+                    },
+                    {
+                      "incoming": {},
+                      "outgoing": {}
+                    },
+                    {
+                      "incoming": {},
+                      "outgoing": {}
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

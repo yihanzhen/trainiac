@@ -3,21 +3,33 @@ import { create, fromJsonString, merge } from "@bufbuild/protobuf";
 import * as modelpb from "../model/gen/model_pb.ts";
 import * as viewpb from "../model/gen/view_pb.ts";
 
-const defaultModel = create(modelpb.ModelSchema, {});
-const defaultView = create(viewpb.ViewSchema, {
-  settings: {
-    canvasSettings: {
-      unitLength: 20,
-      gridXOffset: 0.5,
-      gridYOffset: 0.5,
-      gridClassName: "default-grid",
+function defaultModel() {
+  return create(modelpb.ModelSchema, {});
+}
+
+function defaultView() {
+  return create(viewpb.ViewSchema, {
+    settings: {
+      canvasSettings: {
+        unitLength: 20,
+        gridXOffset: 0.5,
+        gridYOffset: 0.5,
+        gridClassName: "default-grid",
+      },
+      stationSettings: {
+        trackRadius: 0.5,
+        trackStrokeWidth: 0.25,
+        concourseTrackConnectorLength: 0.25,
+      },
     },
-    trackSettings: {
-      trackRadius: 0.5,
-      trackStrokeWidth: 0.25,
-    },
-  },
-});
+  });
+}
+
+function defaultStationView() {
+  return create(viewpb.StationSchema, {
+    className: "default-station",
+  });
+}
 
 export class Config {
   readonly model: modelpb.Model;
@@ -25,10 +37,10 @@ export class Config {
   readonly stations: Map<string, [modelpb.Station, viewpb.Station]>;
 
   private constructor(model: modelpb.Model, view: viewpb.View) {
-    this.model = model;
-    this.view = view;
-    merge(modelpb.ModelSchema, this.model, defaultModel);
-    merge(viewpb.ViewSchema, this.view, defaultView);
+    this.model = defaultModel();
+    this.view = defaultView();
+    merge(modelpb.ModelSchema, this.model, model);
+    merge(viewpb.ViewSchema, this.view, view);
     let stationModelNames: string[] = this.model.stations.map((s) => {
       return s.name;
     });
@@ -64,7 +76,9 @@ export class Config {
       this.stations.set(s.name, [s, create(viewpb.StationSchema)]);
     }
     for (const s of view.stations) {
-      this.stations.get(s.name)![1] = s;
+      var merged = defaultStationView();
+      merge(viewpb.StationSchema, merged, s);
+      this.stations.get(s.name)![1] = merged;
     }
   }
 
