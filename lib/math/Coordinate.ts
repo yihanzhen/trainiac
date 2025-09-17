@@ -52,14 +52,17 @@ export function transformY(
   return (yAbs - toSys.yOffset) / toSys.unitLength;
 }
 
+// Transfroms the x coordinate from cs to screen.
 export function tsx(x: number, cs: CoordinateSystem) {
   return transformX(x, cs, screen);
 }
 
+// Transfroms the y coordinate from cs to screen.
 export function tsy(y: number, cs: CoordinateSystem) {
   return transformY(y, cs, screen);
 }
 
+// Transfroms the scalar coordinate from cs to screen.
 export function tss(s: number, cs: CoordinateSystem) {
   return cs.unitLength * s;
 }
