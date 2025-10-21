@@ -10,7 +10,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file view.proto.
  */
 export const file_view: GenFile = /*@__PURE__*/
-  fileDesc("Cgp2aWV3LnByb3RvEg10cmFpbmlhYy52aWV3InwKCFNldHRpbmdzEjYKD2NhbnZhc19zZXR0aW5ncxgBIAEoCzIdLnRyYWluaWFjLnZpZXcuQ2FudmFzU2V0dGluZ3MSOAoQc3RhdGlvbl9zZXR0aW5ncxgCIAEoCzIeLnRyYWluaWFjLnZpZXcuU3RhdGlvblNldHRpbmdzIsUBCg5DYW52YXNTZXR0aW5ncxITCgt1bml0X2xlbmd0aBgBIAEoBRINCgV3aWR0aBgCIAEoBRIOCgZoZWlnaHQYAyABKAUSEAoIeF9vZmZzZXQYBCABKAISEAoIeV9vZmZzZXQYBSABKAISFAoMZGlzYWJsZV9ncmlkGAYgASgIEhUKDWdyaWRfeF9vZmZzZXQYByABKAISFQoNZ3JpZF95X29mZnNldBgIIAEoAhIXCg9ncmlkX2NsYXNzX25hbWUYCSABKAkibQoPU3RhdGlvblNldHRpbmdzEhQKDHRyYWNrX3JhZGl1cxgCIAEoAhIaChJ0cmFja19zdHJva2Vfd2lkdGgYAyABKAISKAogY29uY291cnNlX3RyYWNrX2Nvbm5lY3Rvcl9sZW5ndGgYBCABKAIiWwoEVmlldxIpCghzZXR0aW5ncxgBIAEoCzIXLnRyYWluaWFjLnZpZXcuU2V0dGluZ3MSKAoIc3RhdGlvbnMYAiADKAsyFi50cmFpbmlhYy52aWV3LlN0YXRpb24i0gIKB1N0YXRpb24SDAoEbmFtZRgBIAEoCRISCgpjbGFzc19uYW1lGAIgASgJEioKBW5vZGVzGAMgAygLMhsudHJhaW5pYWMudmlldy5TdGF0aW9uLk5vZGUaagoETm9kZRIJCgF4GAEgASgCEgkKAXkYAiABKAISMwoJZGlyZWN0aW9uGAMgASgOMiAudHJhaW5pYWMudmlldy5TdGF0aW9uLkRpcmVjdGlvbhIXCg9yZWZlcmVuY2VfdHJhY2sYBCABKAUijAEKCURpcmVjdGlvbhIZChVESVJFQ1RJT05fVU5TUEVDSUZJRUQQABINCglTT1VUSEVBU1QQARIJCgVTT1VUSBACEg0KCVNPVVRIV0VTVBADEggKBFdFU1QQBBINCglOT1JUSFdFU1QQBRIJCgVOT1JUSBAGEg0KCU5PUlRIRUFTVBAHEggKBEVBU1QQCGIGcHJvdG8z");
+  fileDesc("Cgp2aWV3LnByb3RvEg10cmFpbmlhYy52aWV3InwKCFNldHRpbmdzEjYKD2NhbnZhc19zZXR0aW5ncxgBIAEoCzIdLnRyYWluaWFjLnZpZXcuQ2FudmFzU2V0dGluZ3MSOAoQc3RhdGlvbl9zZXR0aW5ncxgCIAEoCzIeLnRyYWluaWFjLnZpZXcuU3RhdGlvblNldHRpbmdzIsUBCg5DYW52YXNTZXR0aW5ncxITCgt1bml0X2xlbmd0aBgBIAEoBRINCgV3aWR0aBgCIAEoBRIOCgZoZWlnaHQYAyABKAUSEAoIeF9vZmZzZXQYBCABKAISEAoIeV9vZmZzZXQYBSABKAISFAoMZGlzYWJsZV9ncmlkGAYgASgIEhUKDWdyaWRfeF9vZmZzZXQYByABKAISFQoNZ3JpZF95X29mZnNldBgIIAEoAhIXCg9ncmlkX2NsYXNzX25hbWUYCSABKAkibQoPU3RhdGlvblNldHRpbmdzEhQKDHRyYWNrX3JhZGl1cxgCIAEoAhIaChJ0cmFja19zdHJva2Vfd2lkdGgYAyABKAISKAogY29uY291cnNlX3RyYWNrX2Nvbm5lY3Rvcl9sZW5ndGgYBCABKAIiWwoEVmlldxIpCghzZXR0aW5ncxgBIAEoCzIXLnRyYWluaWFjLnZpZXcuU2V0dGluZ3MSKAoIc3RhdGlvbnMYAiADKAsyFi50cmFpbmlhYy52aWV3LlN0YXRpb24iuwEKB1N0YXRpb24SDAoEbmFtZRgBIAEoCRISCgpjbGFzc19uYW1lGAIgASgJEioKBW5vZGVzGAMgAygLMhsudHJhaW5pYWMudmlldy5TdGF0aW9uLk5vZGUaYgoETm9kZRIJCgF4GAEgASgCEgkKAXkYAiABKAISKwoJZGlyZWN0aW9uGAMgASgOMhgudHJhaW5pYWMudmlldy5EaXJlY3Rpb24SFwoPcmVmZXJlbmNlX3RyYWNrGAQgASgFKowBCglEaXJlY3Rpb24SGQoVRElSRUNUSU9OX1VOU1BFQ0lGSUVEEAASDQoJU09VVEhFQVNUEAESCQoFU09VVEgQAhINCglTT1VUSFdFU1QQAxIICgRXRVNUEAQSDQoJTk9SVEhXRVNUEAUSCQoFTk9SVEgQBhINCglOT1JUSEVBU1QQBxIICgRFQVNUEAhiBnByb3RvMw");
 
 /**
  * @generated from message trainiac.view.Settings
@@ -240,9 +240,9 @@ export type Station_Node = Message<"trainiac.view.Station.Node"> & {
    * of a node have different directions; we will deal with
    * that later.
    *
-   * @generated from field: trainiac.view.Station.Direction direction = 3;
+   * @generated from field: trainiac.view.Direction direction = 3;
    */
-  direction: Station_Direction;
+  direction: Direction;
 
   /**
    * The index of the track where x and y are coordinates for.
@@ -261,9 +261,9 @@ export const Station_NodeSchema: GenMessage<Station_Node> = /*@__PURE__*/
   messageDesc(file_view, 4, 0);
 
 /**
- * @generated from enum trainiac.view.Station.Direction
+ * @generated from enum trainiac.view.Direction
  */
-export enum Station_Direction {
+export enum Direction {
   /**
    * @generated from enum value: DIRECTION_UNSPECIFIED = 0;
    */
@@ -311,8 +311,8 @@ export enum Station_Direction {
 }
 
 /**
- * Describes the enum trainiac.view.Station.Direction.
+ * Describes the enum trainiac.view.Direction.
  */
-export const Station_DirectionSchema: GenEnum<Station_Direction> = /*@__PURE__*/
-  enumDesc(file_view, 4, 0);
+export const DirectionSchema: GenEnum<Direction> = /*@__PURE__*/
+  enumDesc(file_view, 0);
 
