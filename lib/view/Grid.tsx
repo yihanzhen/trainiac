@@ -29,21 +29,17 @@ export class Grid extends Component<GridProps, {}> {
       yOffset: cs.yOffset * u,
       unitLength: u,
     };
-    let topLeftScr: Coordinate.Coordinate = { x: 0, y: 0 };
-    let bottomRightScr: Coordinate.Coordinate = {
-      x: cs.width * u,
-      y: cs.height * u,
-    };
-    let topLeftInh = Coordinate.transform(
-      topLeftScr,
-      Coordinate.screen,
-      inhSys,
+    let topLeftScr: Coordinate.Coordinate = new Coordinate.Coordinate(0, 0);
+    let bottomRightScr: Coordinate.Coordinate = new Coordinate.Coordinate(
+      cs.width * u,
+      cs.height * u,
     );
-    let bottomRightInh = Coordinate.transform(
-      bottomRightScr,
-      Coordinate.screen,
+    const transformer: Coordinate.Transformer = new Coordinate.Transformer(
       inhSys,
+      Coordinate.screen,
     );
+    let topLeftInh = transformer.transform(topLeftScr);
+    let bottomRightInh = transformer.transform(bottomRightScr);
     let topLeftInhFloorOffset = {
       x: Math.floor(topLeftInh.x) - 1 + cs.gridXOffset,
       y: Math.floor(topLeftInh.y) - 1 + cs.gridYOffset,
@@ -68,7 +64,7 @@ export class Grid extends Component<GridProps, {}> {
     return (
       <>
         {xsInh.map((xInh, _i, _a) => {
-          let xScr = Coordinate.transformX(xInh, inhSys, Coordinate.screen);
+          let xScr = transformer.tsx(xInh);
           return (
             <line
               x1={xScr}
@@ -80,7 +76,7 @@ export class Grid extends Component<GridProps, {}> {
           );
         })}
         {ysInh.map((yInh, _i, _a) => {
-          let yScr = Coordinate.transformX(yInh, inhSys, Coordinate.screen);
+          let yScr = transformer.tsy(yInh);
           return (
             <line
               y1={yScr}

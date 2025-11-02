@@ -42,6 +42,29 @@ message TrackRailway {
 
   // The direction of the railway.
   Direction direction = 2;
+
+  enum InterConnection {
+    INTER_CONNECTION_UNSPECIFIED = 0;
+
+    ENTRY = 1;
+
+    EXIT = 2;
+  }
+
+  message IntraConnection {
+    string node = 1;
+
+    int32 track = 2;
+  }
+
+  message Connection {
+    oneof connection {
+      InterConnection inter_connection = 1;
+      IntraConnection intra_connection = 2;
+    }
+  }
+
+  repeated Connection connections = 3;
 }
 
 // Defines how tracks are arranged at a station.
@@ -63,6 +86,8 @@ message TrackArrangement {
   }
 
   repeated Node nodes = 1;
+
+  repeated TrackRailway track_railways = 2;
 }
 
 // Defines a concourse. A concourse can have multiple tracks and
@@ -75,36 +100,33 @@ message Concourse {
   // The display name of the concourse.
   LocalizedString display_name = 2;
 
-  // Defines a track at a railway concourse.
-  message Track {
-    TrackRailway incoming = 1;
-
-    TrackRailway outgoing = 2;
-  }
-
-  // Tracks of the concourse.
-  repeated Track tracks = 4;
+  // number of tracks.
+  int32 track_count = 3;
 }
 
 // Defines a station with multiple concourses in parallel.
+// (I think this can be deprecated.)
 message MultiConcourse {
-  repeated Concourse concourses = 1;
+  string name = 1;
+  repeated Concourse concourses = 2;
 }
 
 // Defines an interlocking station.
 message Interlocking {
-  message Track {
-    repeated TrackRailway incomings = 2;
+  // The name of the concourse.
+  string name = 1;
 
-    repeated TrackRailway outgoings = 3;
-  }
+  // The display name of the concourse.
+  LocalizedString display_name = 2;
 
-  repeated Track tracks = 4;
+  // number of tracks.
+  int32 track_count = 3;
 }
 
 // Defines a terminus station.
 message Terminus {
-  repeated TrackRailway incomings = 1;
+  string name = 1;
+  repeated TrackRailway incomings = 2;
 }
 
 message Station {
