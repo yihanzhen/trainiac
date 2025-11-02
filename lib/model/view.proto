@@ -47,13 +47,31 @@ message CanvasSettings {
 message StationSettings {
   // The radius of a track in a concourse measured by the
   // number of units. The default value is 0.5.
-  float track_radius = 2;
+  float concourse_track_radius = 1;
 
-  // The stroke width of a track. The default value is 0.15.
-  // TODO: deprecate. Using CSS instead.
-  float track_stroke_width = 3;
+  float concourse_track_connector_length = 2;
 
-  float concourse_track_connector_length = 4;
+  // Do not use css for this; we need to convert between coordinate systems.
+  float concourse_track_stroke_width = 3;
+
+  // default: default-concourse.
+  string concourse_class_name = 4;
+
+  float interlocking_track_radius = 5;
+
+  float interlocking_track_connector_length = 6;
+
+  // Do not use css for this; we need to convert between coordinate systems.
+  float interlocking_track_stroke_width = 7;
+
+  // default: default-interlocking.
+  string interlocking_class_name = 8;
+
+  // default: 2.
+  float station_line_curve_radius = 9;
+
+  // default: 0.5
+  float station_line_stroke_width = 10;
 }
 
 // Configuration of a transit diagram.

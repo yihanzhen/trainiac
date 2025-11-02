@@ -10,7 +10,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file view.proto.
  */
 export const file_view: GenFile = /*@__PURE__*/
-  fileDesc("Cgp2aWV3LnByb3RvEg10cmFpbmlhYy52aWV3InwKCFNldHRpbmdzEjYKD2NhbnZhc19zZXR0aW5ncxgBIAEoCzIdLnRyYWluaWFjLnZpZXcuQ2FudmFzU2V0dGluZ3MSOAoQc3RhdGlvbl9zZXR0aW5ncxgCIAEoCzIeLnRyYWluaWFjLnZpZXcuU3RhdGlvblNldHRpbmdzIsUBCg5DYW52YXNTZXR0aW5ncxITCgt1bml0X2xlbmd0aBgBIAEoBRINCgV3aWR0aBgCIAEoBRIOCgZoZWlnaHQYAyABKAUSEAoIeF9vZmZzZXQYBCABKAISEAoIeV9vZmZzZXQYBSABKAISFAoMZGlzYWJsZV9ncmlkGAYgASgIEhUKDWdyaWRfeF9vZmZzZXQYByABKAISFQoNZ3JpZF95X29mZnNldBgIIAEoAhIXCg9ncmlkX2NsYXNzX25hbWUYCSABKAkibQoPU3RhdGlvblNldHRpbmdzEhQKDHRyYWNrX3JhZGl1cxgCIAEoAhIaChJ0cmFja19zdHJva2Vfd2lkdGgYAyABKAISKAogY29uY291cnNlX3RyYWNrX2Nvbm5lY3Rvcl9sZW5ndGgYBCABKAIiWwoEVmlldxIpCghzZXR0aW5ncxgBIAEoCzIXLnRyYWluaWFjLnZpZXcuU2V0dGluZ3MSKAoIc3RhdGlvbnMYAiADKAsyFi50cmFpbmlhYy52aWV3LlN0YXRpb24iuwEKB1N0YXRpb24SDAoEbmFtZRgBIAEoCRISCgpjbGFzc19uYW1lGAIgASgJEioKBW5vZGVzGAMgAygLMhsudHJhaW5pYWMudmlldy5TdGF0aW9uLk5vZGUaYgoETm9kZRIJCgF4GAEgASgCEgkKAXkYAiABKAISKwoJZGlyZWN0aW9uGAMgASgOMhgudHJhaW5pYWMudmlldy5EaXJlY3Rpb24SFwoPcmVmZXJlbmNlX3RyYWNrGAQgASgFKowBCglEaXJlY3Rpb24SGQoVRElSRUNUSU9OX1VOU1BFQ0lGSUVEEAASDQoJU09VVEhFQVNUEAESCQoFU09VVEgQAhINCglTT1VUSFdFU1QQAxIICgRXRVNUEAQSDQoJTk9SVEhXRVNUEAUSCQoFTk9SVEgQBhINCglOT1JUSEVBU1QQBxIICgRFQVNUEAhiBnByb3RvMw");
+  fileDesc("Cgp2aWV3LnByb3RvEg10cmFpbmlhYy52aWV3InwKCFNldHRpbmdzEjYKD2NhbnZhc19zZXR0aW5ncxgBIAEoCzIdLnRyYWluaWFjLnZpZXcuQ2FudmFzU2V0dGluZ3MSOAoQc3RhdGlvbl9zZXR0aW5ncxgCIAEoCzIeLnRyYWluaWFjLnZpZXcuU3RhdGlvblNldHRpbmdzIsUBCg5DYW52YXNTZXR0aW5ncxITCgt1bml0X2xlbmd0aBgBIAEoBRINCgV3aWR0aBgCIAEoBRIOCgZoZWlnaHQYAyABKAUSEAoIeF9vZmZzZXQYBCABKAISEAoIeV9vZmZzZXQYBSABKAISFAoMZGlzYWJsZV9ncmlkGAYgASgIEhUKDWdyaWRfeF9vZmZzZXQYByABKAISFQoNZ3JpZF95X29mZnNldBgIIAEoAhIXCg9ncmlkX2NsYXNzX25hbWUYCSABKAki/wIKD1N0YXRpb25TZXR0aW5ncxIeChZjb25jb3Vyc2VfdHJhY2tfcmFkaXVzGAEgASgCEigKIGNvbmNvdXJzZV90cmFja19jb25uZWN0b3JfbGVuZ3RoGAIgASgCEiQKHGNvbmNvdXJzZV90cmFja19zdHJva2Vfd2lkdGgYAyABKAISHAoUY29uY291cnNlX2NsYXNzX25hbWUYBCABKAkSIQoZaW50ZXJsb2NraW5nX3RyYWNrX3JhZGl1cxgFIAEoAhIrCiNpbnRlcmxvY2tpbmdfdHJhY2tfY29ubmVjdG9yX2xlbmd0aBgGIAEoAhInCh9pbnRlcmxvY2tpbmdfdHJhY2tfc3Ryb2tlX3dpZHRoGAcgASgCEh8KF2ludGVybG9ja2luZ19jbGFzc19uYW1lGAggASgJEiEKGXN0YXRpb25fbGluZV9jdXJ2ZV9yYWRpdXMYCSABKAISIQoZc3RhdGlvbl9saW5lX3N0cm9rZV93aWR0aBgKIAEoAiJbCgRWaWV3EikKCHNldHRpbmdzGAEgASgLMhcudHJhaW5pYWMudmlldy5TZXR0aW5ncxIoCghzdGF0aW9ucxgCIAMoCzIWLnRyYWluaWFjLnZpZXcuU3RhdGlvbiK7AQoHU3RhdGlvbhIMCgRuYW1lGAEgASgJEhIKCmNsYXNzX25hbWUYAiABKAkSKgoFbm9kZXMYAyADKAsyGy50cmFpbmlhYy52aWV3LlN0YXRpb24uTm9kZRpiCgROb2RlEgkKAXgYASABKAISCQoBeRgCIAEoAhIrCglkaXJlY3Rpb24YAyABKA4yGC50cmFpbmlhYy52aWV3LkRpcmVjdGlvbhIXCg9yZWZlcmVuY2VfdHJhY2sYBCABKAUqjAEKCURpcmVjdGlvbhIZChVESVJFQ1RJT05fVU5TUEVDSUZJRUQQABINCglTT1VUSEVBU1QQARIJCgVTT1VUSBACEg0KCVNPVVRIV0VTVBADEggKBFdFU1QQBBINCglOT1JUSFdFU1QQBRIJCgVOT1JUSBAGEg0KCU5PUlRIRUFTVBAHEggKBEVBU1QQCGIGcHJvdG8z");
 
 /**
  * @generated from message trainiac.view.Settings
@@ -126,22 +126,66 @@ export type StationSettings = Message<"trainiac.view.StationSettings"> & {
    * The radius of a track in a concourse measured by the
    * number of units. The default value is 0.5.
    *
-   * @generated from field: float track_radius = 2;
+   * @generated from field: float concourse_track_radius = 1;
    */
-  trackRadius: number;
+  concourseTrackRadius: number;
 
   /**
-   * The stroke width of a track. The default value is 0.15.
-   * TODO: deprecate. Using CSS instead.
-   *
-   * @generated from field: float track_stroke_width = 3;
-   */
-  trackStrokeWidth: number;
-
-  /**
-   * @generated from field: float concourse_track_connector_length = 4;
+   * @generated from field: float concourse_track_connector_length = 2;
    */
   concourseTrackConnectorLength: number;
+
+  /**
+   * Do not use css for this; we need to convert between coordinate systems.
+   *
+   * @generated from field: float concourse_track_stroke_width = 3;
+   */
+  concourseTrackStrokeWidth: number;
+
+  /**
+   * default: default-concourse.
+   *
+   * @generated from field: string concourse_class_name = 4;
+   */
+  concourseClassName: string;
+
+  /**
+   * @generated from field: float interlocking_track_radius = 5;
+   */
+  interlockingTrackRadius: number;
+
+  /**
+   * @generated from field: float interlocking_track_connector_length = 6;
+   */
+  interlockingTrackConnectorLength: number;
+
+  /**
+   * Do not use css for this; we need to convert between coordinate systems.
+   *
+   * @generated from field: float interlocking_track_stroke_width = 7;
+   */
+  interlockingTrackStrokeWidth: number;
+
+  /**
+   * default: default-interlocking.
+   *
+   * @generated from field: string interlocking_class_name = 8;
+   */
+  interlockingClassName: string;
+
+  /**
+   * default: 2.
+   *
+   * @generated from field: float station_line_curve_radius = 9;
+   */
+  stationLineCurveRadius: number;
+
+  /**
+   * default: 0.5
+   *
+   * @generated from field: float station_line_stroke_width = 10;
+   */
+  stationLineStrokeWidth: number;
 };
 
 /**

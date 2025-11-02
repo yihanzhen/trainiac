@@ -1,0 +1,108 @@
+{
+  "stations": [
+    {
+      "name": "My Station",
+      "trackArrangement": {
+        "nodes": [
+          {
+            "interlocking": {
+              "name": "incoming interlock",
+              "track_count": 1
+            }
+          },
+          {
+            "concourse": {
+              "name": "concourse",
+              "track_count": 3
+            }
+          },
+          {
+            "interlocking": {
+              "name": "outgoing interlock Line 2",
+              "track_count": 1
+            }
+          },
+          {
+            "interlocking": {
+              "name": "outgoing interlock Line 1",
+              "track_count": 1
+            }
+          }
+        ],
+        "track_railways": [
+          {
+            "railway": "Line 1",
+            "direction": "DOUBLE_TRACK",
+            "connections": [
+              { "inter_connection": "ENTRY" },
+              {
+                "intra_connection": {
+                  "node": "incoming interlock",
+                  "track": 0
+                }
+              },
+              {
+                "intra_connection": {
+                  "node": "concourse",
+                  "track": 1
+                }
+              },
+              {
+                "intra_connection": {
+                  "node": "outgoing interlock Line 1",
+                  "track": 0
+                }
+              },
+              { "inter_connection": "EXIT" }
+            ]
+          },
+          {
+            "railway": "Line 2 outbound",
+            "direction": "SINGLE_TRACK_OUTBOUND",
+            "connections": [
+              {
+                "intra_connection": { "node": "incoming interlock", "track": 0 }
+              },
+              { "intra_connection": { "node": "concourse", "track": 2 } },
+              {
+                "intra_connection": {
+                  "node": "outgoing interlock Line 2",
+                  "track": 0
+                }
+              }
+            ]
+          },
+          {
+            "railway": "Line 2 inbound",
+            "direction": "SINGLE_TRACK_INBOUND",
+            "connections": [
+              {
+                "intra_connection": { "node": "incoming interlock", "track": 0 }
+              },
+              { "intra_connection": { "node": "concourse", "track": 0 } },
+              {
+                "intra_connection": {
+                  "node": "outgoing interlock Line 2",
+                  "track": 0
+                }
+              }
+            ]
+          },
+          {
+            "railway": "Line 2",
+            "direction": "DOUBLE_TRACK",
+            "connections": [
+              {
+                "intra_connection": {
+                  "node": "outgoing interlock Line 2",
+                  "track": 0
+                }
+              },
+              { "inter_connection": "EXIT" }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

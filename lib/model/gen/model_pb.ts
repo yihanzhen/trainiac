@@ -10,7 +10,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file model.proto.
  */
 export const file_model: GenFile = /*@__PURE__*/
-  fileDesc("Cgttb2RlbC5wcm90bxIOdHJhaW5pYWMubW9kZWwilwEKD0xvY2FsaXplZFN0cmluZxI9Cgdsb2NhbGVzGAEgAygLMiwudHJhaW5pYWMubW9kZWwuTG9jYWxpemVkU3RyaW5nLkxvY2FsZXNFbnRyeRIVCg1kZWZhdWx0X3ZhbHVlGAIgASgJGi4KDExvY2FsZXNFbnRyeRILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAk6AjgBIq8BCgVNb2RlbBIpCghzdGF0aW9ucxgBIAMoCzIXLnRyYWluaWFjLm1vZGVsLlN0YXRpb24SKQoIcmFpbHdheXMYAiADKAsyFy50cmFpbmlhYy5tb2RlbC5SYWlsd2F5EiMKBWxpbmVzGAMgAygLMhQudHJhaW5pYWMubW9kZWwuTGluZRIrCgljb3JyaWRvcnMYBCADKAsyGC50cmFpbmlhYy5tb2RlbC5Db3JyaWRvciLkAQoMVHJhY2tSYWlsd2F5Eg8KB3JhaWx3YXkYASABKAkSOQoJZGlyZWN0aW9uGAIgASgOMiYudHJhaW5pYWMubW9kZWwuVHJhY2tSYWlsd2F5LkRpcmVjdGlvbiKHAQoJRGlyZWN0aW9uEhkKFURJUkVDVElPTl9VTlNQRUNJRklFRBAAEhgKFFNJTkdMRV9UUkFDS19JTkJPVU5EEAESGQoVU0lOR0xFX1RSQUNLX09VVEJPVU5EEAISGAoUU0lOR0xFX1RSQUNLX1RXT19XQVkQAxIQCgxET1VCTEVfVFJBQ0sQBCKoAgoQVHJhY2tBcnJhbmdlbWVudBI0CgVub2RlcxgBIAMoCzIlLnRyYWluaWFjLm1vZGVsLlRyYWNrQXJyYW5nZW1lbnQuTm9kZRrdAQoETm9kZRIuCgljb25jb3Vyc2UYASABKAsyGS50cmFpbmlhYy5tb2RlbC5Db25jb3Vyc2VIABI5Cg9tdWx0aV9jb25jb3Vyc2UYAiABKAsyHi50cmFpbmlhYy5tb2RlbC5NdWx0aUNvbmNvdXJzZUgAEjQKDGludGVybG9ja2luZxgDIAEoCzIcLnRyYWluaWFjLm1vZGVsLkludGVybG9ja2luZ0gAEiwKCHRlcm1pbnVzGAQgASgLMhgudHJhaW5pYWMubW9kZWwuVGVybWludXNIAEIGCgRub2RlIuoBCglDb25jb3Vyc2USDAoEbmFtZRgBIAEoCRI1CgxkaXNwbGF5X25hbWUYAiABKAsyHy50cmFpbmlhYy5tb2RlbC5Mb2NhbGl6ZWRTdHJpbmcSLwoGdHJhY2tzGAQgAygLMh8udHJhaW5pYWMubW9kZWwuQ29uY291cnNlLlRyYWNrGmcKBVRyYWNrEi4KCGluY29taW5nGAEgASgLMhwudHJhaW5pYWMubW9kZWwuVHJhY2tSYWlsd2F5Ei4KCG91dGdvaW5nGAIgASgLMhwudHJhaW5pYWMubW9kZWwuVHJhY2tSYWlsd2F5Ij8KDk11bHRpQ29uY291cnNlEi0KCmNvbmNvdXJzZXMYASADKAsyGS50cmFpbmlhYy5tb2RlbC5Db25jb3Vyc2UirQEKDEludGVybG9ja2luZxIyCgZ0cmFja3MYBCADKAsyIi50cmFpbmlhYy5tb2RlbC5JbnRlcmxvY2tpbmcuVHJhY2saaQoFVHJhY2sSLwoJaW5jb21pbmdzGAIgAygLMhwudHJhaW5pYWMubW9kZWwuVHJhY2tSYWlsd2F5Ei8KCW91dGdvaW5ncxgDIAMoCzIcLnRyYWluaWFjLm1vZGVsLlRyYWNrUmFpbHdheSI7CghUZXJtaW51cxIvCglpbmNvbWluZ3MYASADKAsyHC50cmFpbmlhYy5tb2RlbC5UcmFja1JhaWx3YXkixQIKB1N0YXRpb24SDAoEbmFtZRgBIAEoCRI1CgxkaXNwbGF5X25hbWUYAiABKAsyHy50cmFpbmlhYy5tb2RlbC5Mb2NhbGl6ZWRTdHJpbmcSGwoTZGlyZWN0aW9uX3JlZmVyZW5jZRgDIAEoCRI7ChF0cmFja19hcnJhbmdlbWVudBgEIAEoCzIgLnRyYWluaWFjLm1vZGVsLlRyYWNrQXJyYW5nZW1lbnQSMAoHc2VydmljZRgFIAEoDjIfLnRyYWluaWFjLm1vZGVsLlN0YXRpb24uU2VydmljZSJpCgdTZXJ2aWNlEhcKE1NFUlZJQ0VfVU5TUEVDSUZJRUQQABIKCgZDTE9TRUQQARIKCgZTSUdOQUwQAhIJCgVDQVJHTxADEg0KCVBBU1NFTkdFUhAEEhMKD1BBU1NFTkdFUl9DQVJHTxAFIsUECgtSYWlsd2F5U3BlYxIUCgxkZXNpZ25fc3BlZWQYASABKAUSNAoHc2VydmljZRgCIAEoDjIjLnRyYWluaWFjLm1vZGVsLlJhaWx3YXlTcGVjLlNlcnZpY2USPwoNb3BlcmF0ZV9zdGF0ZRgDIAEoDjIoLnRyYWluaWFjLm1vZGVsLlJhaWx3YXlTcGVjLk9wZXJhdGVTdGF0ZRIwCgV0cmFjaxgEIAEoDjIhLnRyYWluaWFjLm1vZGVsLlJhaWx3YXlTcGVjLlRyYWNrEjYKCGhpZXJhY2h5GAUgASgOMiQudHJhaW5pYWMubW9kZWwuUmFpbHdheVNwZWMuSGllcmFjaHkiUQoHU2VydmljZRIXChNTRVJWSUNFX1VOU1BFQ0lGSUVEEAASDQoJUEFTU0VOR0VSEAESCQoFQ0FHUk8QAhITCg9QQVNTRU5HRVJfQ0FSR08QAyJdCgxPcGVyYXRlU3RhdGUSHQoZT1BFUkFURV9TVEFURV9VTlNQRUNJRklFRBAAEg0KCU9QRVJBVElORxABEhAKDENPTlNUUlVDVElORxACEg0KCURFU0lHTklORxADIkIKBVRyYWNrEhUKEVRSQUNLX1VOU1BFQ0lGSUVEEAASEAoMU0lOR0xFX1RSQUNLEAESEAoMRE9VQkxFX1RSQUNLEAIiSQoISGllcmFjaHkSGAoUSElFUkFDSFlfVU5TUEVDSUZJRUQQABIICgRNQUlOEAESCgoGQlJBTkNIEAISDQoJQ09OTkVDVE9SEAMi3AIKCEludGVydmFsEkYKEWV4aXN0aW5nX2ludGVydmFsGAEgASgLMikudHJhaW5pYWMubW9kZWwuSW50ZXJ2YWwuRXhpc3RpbmdJbnRlcnZhbEgAEjwKDG5ld19pbnRlcnZhbBgCIAEoCzIkLnRyYWluaWFjLm1vZGVsLkludGVydmFsLk5ld0ludGVydmFsSAASOgoVcmFpbHdheV9zcGVjX292ZXJyaWRlGAMgASgLMhsudHJhaW5pYWMubW9kZWwuUmFpbHdheVNwZWMaYQoQRXhpc3RpbmdJbnRlcnZhbBIPCgdyYWlsd2F5GAEgASgJEhUKDXN0YXJ0X3N0YXRpb24YAiABKAkSEwoLZW5kX3N0YXRpb24YAyABKAkSEAoIdXBncmFkZWQYBCABKAgaHwoLTmV3SW50ZXJ2YWwSEAoIc3RhdGlvbnMYAiADKAlCCgoIaW50ZXJ2YWwiNAoFUm91dGUSKwoJaW50ZXJ2YWxzGAEgAygLMhgudHJhaW5pYWMubW9kZWwuSW50ZXJ2YWwipQIKB1JhaWx3YXkSDAoEbmFtZRgBIAEoCRI1CgxkaXNwbGF5X25hbWUYAiABKAsyHy50cmFpbmlhYy5tb2RlbC5Mb2NhbGl6ZWRTdHJpbmcSMQoMcmFpbHdheV9zcGVjGAMgASgLMhsudHJhaW5pYWMubW9kZWwuUmFpbHdheVNwZWMSNQoKbmFtZV9zdGF0ZRgEIAEoDjIhLnRyYWluaWFjLm1vZGVsLlJhaWx3YXkuTmFtZVN0YXRlEiQKBXJvdXRlGAUgASgLMhUudHJhaW5pYWMubW9kZWwuUm91dGUiRQoJTmFtZVN0YXRlEhwKGFJFQ09SRF9TVEFURV9VTlNQRUNJRklFRBAAEgoKBkFDVElWRRABEg4KCkRFUFJFQ0FURUQQAiJxCgRMaW5lEgwKBG5hbWUYASABKAkSNQoMZGlzcGxheV9uYW1lGAIgASgLMh8udHJhaW5pYWMubW9kZWwuTG9jYWxpemVkU3RyaW5nEiQKBXJvdXRlGAMgASgLMhUudHJhaW5pYWMubW9kZWwuUm91dGUidAoIQ29ycmlkb3ISDAoEbmFtZRgBIAEoCRI1CgxkaXNwbGF5X25hbWUYAiABKAsyHy50cmFpbmlhYy5tb2RlbC5Mb2NhbGl6ZWRTdHJpbmcSIwoFbGluZXMYAyADKAsyFC50cmFpbmlhYy5tb2RlbC5MaW5lYgZwcm90bzM");
+  fileDesc("Cgttb2RlbC5wcm90bxIOdHJhaW5pYWMubW9kZWwilwEKD0xvY2FsaXplZFN0cmluZxI9Cgdsb2NhbGVzGAEgAygLMiwudHJhaW5pYWMubW9kZWwuTG9jYWxpemVkU3RyaW5nLkxvY2FsZXNFbnRyeRIVCg1kZWZhdWx0X3ZhbHVlGAIgASgJGi4KDExvY2FsZXNFbnRyeRILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAk6AjgBIq8BCgVNb2RlbBIpCghzdGF0aW9ucxgBIAMoCzIXLnRyYWluaWFjLm1vZGVsLlN0YXRpb24SKQoIcmFpbHdheXMYAiADKAsyFy50cmFpbmlhYy5tb2RlbC5SYWlsd2F5EiMKBWxpbmVzGAMgAygLMhQudHJhaW5pYWMubW9kZWwuTGluZRIrCgljb3JyaWRvcnMYBCADKAsyGC50cmFpbmlhYy5tb2RlbC5Db3JyaWRvciLNBAoMVHJhY2tSYWlsd2F5Eg8KB3JhaWx3YXkYASABKAkSOQoJZGlyZWN0aW9uGAIgASgOMiYudHJhaW5pYWMubW9kZWwuVHJhY2tSYWlsd2F5LkRpcmVjdGlvbhI8Cgtjb25uZWN0aW9ucxgDIAMoCzInLnRyYWluaWFjLm1vZGVsLlRyYWNrUmFpbHdheS5Db25uZWN0aW9uGi4KD0ludHJhQ29ubmVjdGlvbhIMCgRub2RlGAEgASgJEg0KBXRyYWNrGAIgASgFGq4BCgpDb25uZWN0aW9uEkgKEGludGVyX2Nvbm5lY3Rpb24YASABKA4yLC50cmFpbmlhYy5tb2RlbC5UcmFja1JhaWx3YXkuSW50ZXJDb25uZWN0aW9uSAASSAoQaW50cmFfY29ubmVjdGlvbhgCIAEoCzIsLnRyYWluaWFjLm1vZGVsLlRyYWNrUmFpbHdheS5JbnRyYUNvbm5lY3Rpb25IAEIMCgpjb25uZWN0aW9uIocBCglEaXJlY3Rpb24SGQoVRElSRUNUSU9OX1VOU1BFQ0lGSUVEEAASGAoUU0lOR0xFX1RSQUNLX0lOQk9VTkQQARIZChVTSU5HTEVfVFJBQ0tfT1VUQk9VTkQQAhIYChRTSU5HTEVfVFJBQ0tfVFdPX1dBWRADEhAKDERPVUJMRV9UUkFDSxAEIkgKD0ludGVyQ29ubmVjdGlvbhIgChxJTlRFUl9DT05ORUNUSU9OX1VOU1BFQ0lGSUVEEAASCQoFRU5UUlkQARIICgRFWElUEAIi3gIKEFRyYWNrQXJyYW5nZW1lbnQSNAoFbm9kZXMYASADKAsyJS50cmFpbmlhYy5tb2RlbC5UcmFja0FycmFuZ2VtZW50Lk5vZGUSNAoOdHJhY2tfcmFpbHdheXMYAiADKAsyHC50cmFpbmlhYy5tb2RlbC5UcmFja1JhaWx3YXka3QEKBE5vZGUSLgoJY29uY291cnNlGAEgASgLMhkudHJhaW5pYWMubW9kZWwuQ29uY291cnNlSAASOQoPbXVsdGlfY29uY291cnNlGAIgASgLMh4udHJhaW5pYWMubW9kZWwuTXVsdGlDb25jb3Vyc2VIABI0CgxpbnRlcmxvY2tpbmcYAyABKAsyHC50cmFpbmlhYy5tb2RlbC5JbnRlcmxvY2tpbmdIABIsCgh0ZXJtaW51cxgEIAEoCzIYLnRyYWluaWFjLm1vZGVsLlRlcm1pbnVzSABCBgoEbm9kZSJlCglDb25jb3Vyc2USDAoEbmFtZRgBIAEoCRI1CgxkaXNwbGF5X25hbWUYAiABKAsyHy50cmFpbmlhYy5tb2RlbC5Mb2NhbGl6ZWRTdHJpbmcSEwoLdHJhY2tfY291bnQYAyABKAUiTQoOTXVsdGlDb25jb3Vyc2USDAoEbmFtZRgBIAEoCRItCgpjb25jb3Vyc2VzGAIgAygLMhkudHJhaW5pYWMubW9kZWwuQ29uY291cnNlImgKDEludGVybG9ja2luZxIMCgRuYW1lGAEgASgJEjUKDGRpc3BsYXlfbmFtZRgCIAEoCzIfLnRyYWluaWFjLm1vZGVsLkxvY2FsaXplZFN0cmluZxITCgt0cmFja19jb3VudBgDIAEoBSJJCghUZXJtaW51cxIMCgRuYW1lGAEgASgJEi8KCWluY29taW5ncxgCIAMoCzIcLnRyYWluaWFjLm1vZGVsLlRyYWNrUmFpbHdheSLFAgoHU3RhdGlvbhIMCgRuYW1lGAEgASgJEjUKDGRpc3BsYXlfbmFtZRgCIAEoCzIfLnRyYWluaWFjLm1vZGVsLkxvY2FsaXplZFN0cmluZxIbChNkaXJlY3Rpb25fcmVmZXJlbmNlGAMgASgJEjsKEXRyYWNrX2FycmFuZ2VtZW50GAQgASgLMiAudHJhaW5pYWMubW9kZWwuVHJhY2tBcnJhbmdlbWVudBIwCgdzZXJ2aWNlGAUgASgOMh8udHJhaW5pYWMubW9kZWwuU3RhdGlvbi5TZXJ2aWNlImkKB1NlcnZpY2USFwoTU0VSVklDRV9VTlNQRUNJRklFRBAAEgoKBkNMT1NFRBABEgoKBlNJR05BTBACEgkKBUNBUkdPEAMSDQoJUEFTU0VOR0VSEAQSEwoPUEFTU0VOR0VSX0NBUkdPEAUixQQKC1JhaWx3YXlTcGVjEhQKDGRlc2lnbl9zcGVlZBgBIAEoBRI0CgdzZXJ2aWNlGAIgASgOMiMudHJhaW5pYWMubW9kZWwuUmFpbHdheVNwZWMuU2VydmljZRI/Cg1vcGVyYXRlX3N0YXRlGAMgASgOMigudHJhaW5pYWMubW9kZWwuUmFpbHdheVNwZWMuT3BlcmF0ZVN0YXRlEjAKBXRyYWNrGAQgASgOMiEudHJhaW5pYWMubW9kZWwuUmFpbHdheVNwZWMuVHJhY2sSNgoIaGllcmFjaHkYBSABKA4yJC50cmFpbmlhYy5tb2RlbC5SYWlsd2F5U3BlYy5IaWVyYWNoeSJRCgdTZXJ2aWNlEhcKE1NFUlZJQ0VfVU5TUEVDSUZJRUQQABINCglQQVNTRU5HRVIQARIJCgVDQUdSTxACEhMKD1BBU1NFTkdFUl9DQVJHTxADIl0KDE9wZXJhdGVTdGF0ZRIdChlPUEVSQVRFX1NUQVRFX1VOU1BFQ0lGSUVEEAASDQoJT1BFUkFUSU5HEAESEAoMQ09OU1RSVUNUSU5HEAISDQoJREVTSUdOSU5HEAMiQgoFVHJhY2sSFQoRVFJBQ0tfVU5TUEVDSUZJRUQQABIQCgxTSU5HTEVfVFJBQ0sQARIQCgxET1VCTEVfVFJBQ0sQAiJJCghIaWVyYWNoeRIYChRISUVSQUNIWV9VTlNQRUNJRklFRBAAEggKBE1BSU4QARIKCgZCUkFOQ0gQAhINCglDT05ORUNUT1IQAyLcAgoISW50ZXJ2YWwSRgoRZXhpc3RpbmdfaW50ZXJ2YWwYASABKAsyKS50cmFpbmlhYy5tb2RlbC5JbnRlcnZhbC5FeGlzdGluZ0ludGVydmFsSAASPAoMbmV3X2ludGVydmFsGAIgASgLMiQudHJhaW5pYWMubW9kZWwuSW50ZXJ2YWwuTmV3SW50ZXJ2YWxIABI6ChVyYWlsd2F5X3NwZWNfb3ZlcnJpZGUYAyABKAsyGy50cmFpbmlhYy5tb2RlbC5SYWlsd2F5U3BlYxphChBFeGlzdGluZ0ludGVydmFsEg8KB3JhaWx3YXkYASABKAkSFQoNc3RhcnRfc3RhdGlvbhgCIAEoCRITCgtlbmRfc3RhdGlvbhgDIAEoCRIQCgh1cGdyYWRlZBgEIAEoCBofCgtOZXdJbnRlcnZhbBIQCghzdGF0aW9ucxgCIAMoCUIKCghpbnRlcnZhbCI0CgVSb3V0ZRIrCglpbnRlcnZhbHMYASADKAsyGC50cmFpbmlhYy5tb2RlbC5JbnRlcnZhbCKlAgoHUmFpbHdheRIMCgRuYW1lGAEgASgJEjUKDGRpc3BsYXlfbmFtZRgCIAEoCzIfLnRyYWluaWFjLm1vZGVsLkxvY2FsaXplZFN0cmluZxIxCgxyYWlsd2F5X3NwZWMYAyABKAsyGy50cmFpbmlhYy5tb2RlbC5SYWlsd2F5U3BlYxI1CgpuYW1lX3N0YXRlGAQgASgOMiEudHJhaW5pYWMubW9kZWwuUmFpbHdheS5OYW1lU3RhdGUSJAoFcm91dGUYBSABKAsyFS50cmFpbmlhYy5tb2RlbC5Sb3V0ZSJFCglOYW1lU3RhdGUSHAoYUkVDT1JEX1NUQVRFX1VOU1BFQ0lGSUVEEAASCgoGQUNUSVZFEAESDgoKREVQUkVDQVRFRBACInEKBExpbmUSDAoEbmFtZRgBIAEoCRI1CgxkaXNwbGF5X25hbWUYAiABKAsyHy50cmFpbmlhYy5tb2RlbC5Mb2NhbGl6ZWRTdHJpbmcSJAoFcm91dGUYAyABKAsyFS50cmFpbmlhYy5tb2RlbC5Sb3V0ZSJ0CghDb3JyaWRvchIMCgRuYW1lGAEgASgJEjUKDGRpc3BsYXlfbmFtZRgCIAEoCzIfLnRyYWluaWFjLm1vZGVsLkxvY2FsaXplZFN0cmluZxIjCgVsaW5lcxgDIAMoCzIULnRyYWluaWFjLm1vZGVsLkxpbmViBnByb3RvMw");
 
 /**
  * The generic message for localized strings.
@@ -94,6 +94,11 @@ export type TrackRailway = Message<"trainiac.model.TrackRailway"> & {
    * @generated from field: trainiac.model.TrackRailway.Direction direction = 2;
    */
   direction: TrackRailway_Direction;
+
+  /**
+   * @generated from field: repeated trainiac.model.TrackRailway.Connection connections = 3;
+   */
+  connections: TrackRailway_Connection[];
 };
 
 /**
@@ -102,6 +107,57 @@ export type TrackRailway = Message<"trainiac.model.TrackRailway"> & {
  */
 export const TrackRailwaySchema: GenMessage<TrackRailway> = /*@__PURE__*/
   messageDesc(file_model, 2);
+
+/**
+ * @generated from message trainiac.model.TrackRailway.IntraConnection
+ */
+export type TrackRailway_IntraConnection = Message<"trainiac.model.TrackRailway.IntraConnection"> & {
+  /**
+   * @generated from field: string node = 1;
+   */
+  node: string;
+
+  /**
+   * @generated from field: int32 track = 2;
+   */
+  track: number;
+};
+
+/**
+ * Describes the message trainiac.model.TrackRailway.IntraConnection.
+ * Use `create(TrackRailway_IntraConnectionSchema)` to create a new message.
+ */
+export const TrackRailway_IntraConnectionSchema: GenMessage<TrackRailway_IntraConnection> = /*@__PURE__*/
+  messageDesc(file_model, 2, 0);
+
+/**
+ * @generated from message trainiac.model.TrackRailway.Connection
+ */
+export type TrackRailway_Connection = Message<"trainiac.model.TrackRailway.Connection"> & {
+  /**
+   * @generated from oneof trainiac.model.TrackRailway.Connection.connection
+   */
+  connection: {
+    /**
+     * @generated from field: trainiac.model.TrackRailway.InterConnection inter_connection = 1;
+     */
+    value: TrackRailway_InterConnection;
+    case: "interConnection";
+  } | {
+    /**
+     * @generated from field: trainiac.model.TrackRailway.IntraConnection intra_connection = 2;
+     */
+    value: TrackRailway_IntraConnection;
+    case: "intraConnection";
+  } | { case: undefined; value?: undefined };
+};
+
+/**
+ * Describes the message trainiac.model.TrackRailway.Connection.
+ * Use `create(TrackRailway_ConnectionSchema)` to create a new message.
+ */
+export const TrackRailway_ConnectionSchema: GenMessage<TrackRailway_Connection> = /*@__PURE__*/
+  messageDesc(file_model, 2, 1);
 
 /**
  * @generated from enum trainiac.model.TrackRailway.Direction
@@ -140,6 +196,32 @@ export const TrackRailway_DirectionSchema: GenEnum<TrackRailway_Direction> = /*@
   enumDesc(file_model, 2, 0);
 
 /**
+ * @generated from enum trainiac.model.TrackRailway.InterConnection
+ */
+export enum TrackRailway_InterConnection {
+  /**
+   * @generated from enum value: INTER_CONNECTION_UNSPECIFIED = 0;
+   */
+  INTER_CONNECTION_UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: ENTRY = 1;
+   */
+  ENTRY = 1,
+
+  /**
+   * @generated from enum value: EXIT = 2;
+   */
+  EXIT = 2,
+}
+
+/**
+ * Describes the enum trainiac.model.TrackRailway.InterConnection.
+ */
+export const TrackRailway_InterConnectionSchema: GenEnum<TrackRailway_InterConnection> = /*@__PURE__*/
+  enumDesc(file_model, 2, 1);
+
+/**
  * Defines how tracks are arranged at a station.
  *
  * @generated from message trainiac.model.TrackArrangement
@@ -149,6 +231,11 @@ export type TrackArrangement = Message<"trainiac.model.TrackArrangement"> & {
    * @generated from field: repeated trainiac.model.TrackArrangement.Node nodes = 1;
    */
   nodes: TrackArrangement_Node[];
+
+  /**
+   * @generated from field: repeated trainiac.model.TrackRailway track_railways = 2;
+   */
+  trackRailways: TrackRailway[];
 };
 
 /**
@@ -230,11 +317,11 @@ export type Concourse = Message<"trainiac.model.Concourse"> & {
   displayName?: LocalizedString;
 
   /**
-   * Tracks of the concourse.
+   * number of tracks.
    *
-   * @generated from field: repeated trainiac.model.Concourse.Track tracks = 4;
+   * @generated from field: int32 track_count = 3;
    */
-  tracks: Concourse_Track[];
+  trackCount: number;
 };
 
 /**
@@ -245,37 +332,19 @@ export const ConcourseSchema: GenMessage<Concourse> = /*@__PURE__*/
   messageDesc(file_model, 4);
 
 /**
- * Defines a track at a railway concourse.
- *
- * @generated from message trainiac.model.Concourse.Track
- */
-export type Concourse_Track = Message<"trainiac.model.Concourse.Track"> & {
-  /**
-   * @generated from field: trainiac.model.TrackRailway incoming = 1;
-   */
-  incoming?: TrackRailway;
-
-  /**
-   * @generated from field: trainiac.model.TrackRailway outgoing = 2;
-   */
-  outgoing?: TrackRailway;
-};
-
-/**
- * Describes the message trainiac.model.Concourse.Track.
- * Use `create(Concourse_TrackSchema)` to create a new message.
- */
-export const Concourse_TrackSchema: GenMessage<Concourse_Track> = /*@__PURE__*/
-  messageDesc(file_model, 4, 0);
-
-/**
  * Defines a station with multiple concourses in parallel.
+ * (I think this can be deprecated.)
  *
  * @generated from message trainiac.model.MultiConcourse
  */
 export type MultiConcourse = Message<"trainiac.model.MultiConcourse"> & {
   /**
-   * @generated from field: repeated trainiac.model.Concourse concourses = 1;
+   * @generated from field: string name = 1;
+   */
+  name: string;
+
+  /**
+   * @generated from field: repeated trainiac.model.Concourse concourses = 2;
    */
   concourses: Concourse[];
 };
@@ -294,9 +363,25 @@ export const MultiConcourseSchema: GenMessage<MultiConcourse> = /*@__PURE__*/
  */
 export type Interlocking = Message<"trainiac.model.Interlocking"> & {
   /**
-   * @generated from field: repeated trainiac.model.Interlocking.Track tracks = 4;
+   * The name of the concourse.
+   *
+   * @generated from field: string name = 1;
    */
-  tracks: Interlocking_Track[];
+  name: string;
+
+  /**
+   * The display name of the concourse.
+   *
+   * @generated from field: trainiac.model.LocalizedString display_name = 2;
+   */
+  displayName?: LocalizedString;
+
+  /**
+   * number of tracks.
+   *
+   * @generated from field: int32 track_count = 3;
+   */
+  trackCount: number;
 };
 
 /**
@@ -307,35 +392,18 @@ export const InterlockingSchema: GenMessage<Interlocking> = /*@__PURE__*/
   messageDesc(file_model, 6);
 
 /**
- * @generated from message trainiac.model.Interlocking.Track
- */
-export type Interlocking_Track = Message<"trainiac.model.Interlocking.Track"> & {
-  /**
-   * @generated from field: repeated trainiac.model.TrackRailway incomings = 2;
-   */
-  incomings: TrackRailway[];
-
-  /**
-   * @generated from field: repeated trainiac.model.TrackRailway outgoings = 3;
-   */
-  outgoings: TrackRailway[];
-};
-
-/**
- * Describes the message trainiac.model.Interlocking.Track.
- * Use `create(Interlocking_TrackSchema)` to create a new message.
- */
-export const Interlocking_TrackSchema: GenMessage<Interlocking_Track> = /*@__PURE__*/
-  messageDesc(file_model, 6, 0);
-
-/**
  * Defines a terminus station.
  *
  * @generated from message trainiac.model.Terminus
  */
 export type Terminus = Message<"trainiac.model.Terminus"> & {
   /**
-   * @generated from field: repeated trainiac.model.TrackRailway incomings = 1;
+   * @generated from field: string name = 1;
+   */
+  name: string;
+
+  /**
+   * @generated from field: repeated trainiac.model.TrackRailway incomings = 2;
    */
   incomings: TrackRailway[];
 };

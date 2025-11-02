@@ -6,6 +6,8 @@ import playgroundErrStationModel from "../impl/playground/errstation/model.json?
 import playgroundErrStationView from "../impl/playground/errstation/view.json?raw";
 import playgroundMultiConcourseStationModel from "../impl/playground/multiconcoursestation/model.json?raw";
 import playgroundMultiConcourseStationView from "../impl/playground/multiconcoursestation/view.json?raw";
+import playgroundMultiNodeStationModel from "../impl/playground/multinodestation/model.json?raw";
+import playgroundMultiNodeStationView from "../impl/playground/multinodestation/view.json?raw";
 import playgroundSingleStationModel from "../impl/playground/station/model.json?raw";
 import playgroundSingleStationView from "../impl/playground/station/view.json?raw";
 import playgroundTwoStationsModel from "../impl/playground/twostations/model.json?raw";
@@ -55,11 +57,19 @@ function PlaygroundApp() {
               ></Graph>
             </GraphError>
           </PlaygroundCard>
-          <PlaygroundCard name="two track concourse station">
+          <PlaygroundCard name="multi-concourse station">
             <GraphError>
               <Graph
                 model={playgroundMultiConcourseStationModel}
                 view={playgroundMultiConcourseStationView}
+              ></Graph>
+            </GraphError>
+          </PlaygroundCard>
+          <PlaygroundCard name="multi node station">
+            <GraphError>
+              <Graph
+                model={playgroundMultiNodeStationModel}
+                view={playgroundMultiNodeStationView}
               ></Graph>
             </GraphError>
           </PlaygroundCard>

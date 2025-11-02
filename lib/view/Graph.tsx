@@ -1,6 +1,7 @@
 import { Component } from "react";
 
 import { Config } from "../config/Config.ts";
+import * as Coordinate from "../math/Coordinate.ts";
 import { Grid } from "./Grid.tsx";
 import { Station } from "./Station.tsx";
 
@@ -36,19 +37,23 @@ export class Graph extends Component<GraphProps, {}> {
             canvasSettings={this.config.view.settings!.canvasSettings!}
           ></Grid>
           {Array.from(this.config.stations.entries()).map(
-            ([n, [model, view]], _i) => {
+            ([n, stationConfig], _i) => {
               return (
                 <Station
                   name={n}
                   key={n}
-                  view={view}
-                  model={model}
+                  config={stationConfig}
                   viewSettings={this.config.view.settings!}
-                  ics={{
-                    xOffset: cs.xOffset * u,
-                    yOffset: cs.yOffset * u,
-                    unitLength: u,
-                  }}
+                  transformer={
+                    new Coordinate.Transformer(
+                      {
+                        xOffset: cs.xOffset * u,
+                        yOffset: cs.yOffset * u,
+                        unitLength: u,
+                      },
+                      Coordinate.screen,
+                    )
+                  }
                 ></Station>
               );
             },

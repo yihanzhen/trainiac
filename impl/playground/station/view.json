@@ -7,8 +7,8 @@
       "grid_class_name": "default-grid"
     },
     "station_settings": {
-      "track_radius": 0.5,
-      "track_stroke_width": 0.15
+      "concourse_track_radius": 0.5,
+      "concourse_track_stroke_width": 0.15
     }
   },
   "stations": [

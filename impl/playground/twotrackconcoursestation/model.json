@@ -7,16 +7,7 @@
           {
             "concourse": {
               "name": "Default Concourse",
-              "tracks": [
-                {
-                  "incoming": {},
-                  "outgoing": {}
-                },
-                {
-                  "incoming": {},
-                  "outgoing": {}
-                }
-              ]
+              "track_count": 2
             }
           }
         ]
