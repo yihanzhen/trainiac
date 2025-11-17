@@ -55,6 +55,10 @@ message TrackRailway {
     string node = 1;
 
     int32 track = 2;
+
+    // connects to this node in the reserve direction of the node's direction.
+    // Currently only used from terminus nodes.
+    bool reverse = 3;
   }
 
   message Connection {
@@ -126,7 +130,8 @@ message Interlocking {
 // Defines a terminus station.
 message Terminus {
   string name = 1;
-  repeated TrackRailway incomings = 2;
+  // number of tracks.
+  int32 track_count = 2;
 }
 
 message Station {

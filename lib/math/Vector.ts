@@ -30,6 +30,9 @@ export class Vector extends Coordinate {
     return new Vector(super.move(p1 as Direction.Direction, p2!), this.d);
   }
 
+  reverse(): Vector {
+    return new Vector(this.x, this.y, this.d.reverse());
+  }
   toString(): string {
     return `{${super.toString()}->${this.d.toString()}}`;
   }

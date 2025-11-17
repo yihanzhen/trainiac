@@ -5,6 +5,12 @@
       "trackArrangement": {
         "nodes": [
           {
+            "terminus": {
+              "name": "entry terminus",
+              "track_count": 1
+            }
+          },
+          {
             "interlocking": {
               "name": "incoming interlock",
               "track_count": 1
@@ -27,6 +33,12 @@
               "name": "outgoing interlock Line 1",
               "track_count": 1
             }
+          },
+          {
+            "terminus": {
+              "name": "exit terminus",
+              "track_count": 2
+            }
           }
         ],
         "track_railways": [
@@ -34,7 +46,12 @@
             "railway": "Line 1",
             "direction": "DOUBLE_TRACK",
             "connections": [
-              { "inter_connection": "ENTRY" },
+              {
+                "intra_connection": {
+                  "node": "entry terminus",
+                  "track": 0
+                }
+              },
               {
                 "intra_connection": {
                   "node": "incoming interlock",
@@ -53,7 +70,13 @@
                   "track": 0
                 }
               },
-              { "inter_connection": "EXIT" }
+              {
+                "intra_connection": {
+                  "node": "exit terminus",
+                  "track": 0,
+                  "reverse": true
+                }
+              }
             ]
           },
           {
@@ -98,7 +121,13 @@
                   "track": 0
                 }
               },
-              { "inter_connection": "EXIT" }
+              {
+                "intra_connection": {
+                  "node": "exit terminus",
+                  "track": 1,
+                  "reverse": true
+                }
+              }
             ]
           }
         ]

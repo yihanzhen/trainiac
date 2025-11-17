@@ -10,7 +10,7 @@
     "station_settings": {
       "concourse_track_radius": 0.5,
       "concourse_track_stroke_width": 0.15,
-      "station_line_curve_radius": 0.5,
+      "station_line_curve_radius": 1.5,
       "station_line_stroke_width": 0.2
     }
   },
@@ -18,10 +18,12 @@
     {
       "name": "My Station",
       "nodes": [
+        { "x": 3, "y": 12, "direction": "EAST" },
         { "x": 9, "y": 12, "direction": "EAST" },
         { "x": 18, "y": 12, "reference_track": 1, "direction": "EAST" },
         { "x": 27, "y": 11, "direction": "EAST" },
-        { "x": 27, "y": 12, "direction": "EAST" }
+        { "x": 27, "y": 12, "direction": "EAST" },
+        { "x": 33, "y": 12, "reference_track": 0, "direction": "WEST" }
       ]
     }
   ]
