@@ -91,13 +91,14 @@ export class Station extends React.Component<StationProps, {}> {
             const nodeConfig: StationConfig.NodeConfig = nodeMap.get(nodeName)!;
             const nodeModel = nodeConfig.model;
             const nodeView = nodeConfig.view;
-            const radius: number =
-              nodeModel.node.case == "concourse"
-                ? viewSettings.stationSettings!.concourseTrackRadius
-                : viewSettings.stationSettings!.interlockingTrackRadius;
+            const radius: number = this.trackRadius(
+              nodeModel,
+              viewSettings.stationSettings!,
+            );
             const currVector: Vector.Vector = this.trackVector(
               nodeModel,
               nodeView,
+              conn.connection.value.reverse,
               viewSettings!.stationSettings!,
               conn.connection.value.track,
             );
@@ -134,6 +135,7 @@ export class Station extends React.Component<StationProps, {}> {
           Path.render(
             this.props.transformer,
             path,
+            // TODO: read from model
             "default-station-line",
             viewSettings.stationSettings!.stationLineStrokeWidth,
           ),
@@ -186,6 +188,16 @@ export class Station extends React.Component<StationProps, {}> {
             ),
           );
           break;
+        case "terminus":
+          nodes.push(
+            this.renderTerminus(
+              mn.node.value,
+              this.props.viewSettings.stationSettings!,
+              vn,
+              0,
+            ),
+          );
+          break;
         default:
           throw new Error(`Unimplemented: ${mn.node.case}`);
       }
@@ -203,6 +215,7 @@ export class Station extends React.Component<StationProps, {}> {
     nx: number,
     ny: number,
     nd: viewpb.Direction,
+    outOnly: boolean,
   ) {
     const hl = trackConnectorLength / 2;
     const tr = trackRadius;
@@ -213,7 +226,8 @@ export class Station extends React.Component<StationProps, {}> {
     var pathCmd = "";
     // Right half.
     var cx = nx;
-    var cy = 0;
+    var cy0 = ny - (refTrack - skipTrack) * 2 * tr;
+    var cy = cy0;
     for (var i = 0; i < numTracks; i++) {
       const ti = i + skipTrack;
       cy = ny - (refTrack - ti) * 2 * tr;
@@ -229,13 +243,18 @@ export class Station extends React.Component<StationProps, {}> {
     pathCmd += ` A ${this.props.transformer.tss(tr)} ${this.props.transformer.tss(tr)} 0 0 1 ${this.props.transformer.tsx(cx - dx)} ${this.props.transformer.tsy(cy + dy)}`;
 
     // Left half.
-    for (var i = numTracks - 1; i >= 0; i--) {
-      const ti = i + skipTrack;
-      cy = ny - (refTrack - ti) * 2 * tr;
-      if (i != numTracks - 1) {
-        pathCmd += ` L ${this.props.transformer.tsx(cx - dx)} ${this.props.transformer.tsy(cy + dy)}`;
+    if (outOnly) {
+      cy = cy0;
+      pathCmd += ` L ${this.props.transformer.tsx(cx - dx)} ${this.props.transformer.tsy(cy - dy)}`;
+    } else {
+      for (var i = numTracks - 1; i >= 0; i--) {
+        const ti = i + skipTrack;
+        cy = ny - (refTrack - ti) * 2 * tr;
+        if (i != numTracks - 1) {
+          pathCmd += ` L ${this.props.transformer.tsx(cx - dx)} ${this.props.transformer.tsy(cy + dy)}`;
+        }
+        pathCmd += ` A ${this.props.transformer.tss(tr)} ${this.props.transformer.tss(tr)} 0 0 1 ${this.props.transformer.tsx(cx - dx)} ${this.props.transformer.tsy(cy - dy)}`;
       }
-      pathCmd += ` A ${this.props.transformer.tss(tr)} ${this.props.transformer.tss(tr)} 0 0 1 ${this.props.transformer.tsx(cx - dx)} ${this.props.transformer.tsy(cy - dy)}`;
     }
 
     // Top.
@@ -268,6 +287,7 @@ export class Station extends React.Component<StationProps, {}> {
       vn.x,
       vn.y,
       vn.direction,
+      false,
     );
   }
 
@@ -286,6 +306,27 @@ export class Station extends React.Component<StationProps, {}> {
       vn.x,
       vn.y,
       vn.direction,
+      false,
+    );
+  }
+
+  renderTerminus(
+    mc: modelpb.Terminus,
+    vs: viewpb.StationSettings,
+    vn: viewpb.Station_Node,
+    skipTrack: number,
+  ) {
+    return this.renderNode(
+      mc.trackCount,
+      vs.concourseTrackConnectorLength,
+      vs.concourseTrackRadius,
+      vs.concourseTrackStrokeWidth,
+      skipTrack,
+      vn.referenceTrack,
+      vn.x,
+      vn.y,
+      vn.direction,
+      true,
     );
   }
 
@@ -297,6 +338,7 @@ export class Station extends React.Component<StationProps, {}> {
       case "interlocking":
         return vs.interlockingTrackRadius;
       case "concourse":
+      case "terminus":
         return vs.concourseTrackRadius;
       default:
         throw new Error(`unimplemented type: ${nodeModel.node.case}`);
@@ -306,6 +348,7 @@ export class Station extends React.Component<StationProps, {}> {
   trackVector(
     nodeModel: modelpb.TrackArrangement_Node,
     nodeView: viewpb.Station_Node,
+    reverse: boolean,
     vs: viewpb.StationSettings,
     index: number,
   ): Vector.Vector {
@@ -315,15 +358,15 @@ export class Station extends React.Component<StationProps, {}> {
       Direction.fromViewPbDirection(nodeView.direction),
     );
     const shiftTracks: number = index - nodeView.referenceTrack;
-    if (shiftTracks == 0) {
-      return nodeVector;
-    }
     const trackRadius: number = this.trackRadius(nodeModel, vs);
     const shiftDistance: number = shiftTracks * trackRadius * 2;
     nodeVector = nodeVector.move(
       nodeVector.d.rotate(Math.PI / 2),
       shiftDistance,
     );
+    if (reverse) {
+      nodeVector = nodeVector.reverse();
+    }
     return nodeVector;
   }
 }
